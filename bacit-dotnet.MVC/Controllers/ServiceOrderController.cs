@@ -5,6 +5,7 @@ using System.Xml.Linq;
 
 namespace bacit_dotnet.MVC.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class ServiceOrderController : Controller
     {
         public IActionResult Create()
@@ -64,6 +65,7 @@ namespace bacit_dotnet.MVC.Controllers
 
         [HttpPost]
         [HttpGet]
+        [ValidateAntiForgeryToken]
         public IActionResult CreateWorkDocument(string Order, string Week, string Inquiry, bool CaseCompleted, string CustomerInfo, DateTime? PlannedDelivery, DateTime? ProductReceivedDate, DateTime? AgreedCompletionDate, DateTime? ServiceCompletedDate, string ServiceHours, bool HasOrderNumber, bool HasServiceForm)
         {
             var model = new WorkDocumentViewModel
@@ -86,17 +88,69 @@ namespace bacit_dotnet.MVC.Controllers
 
         [HttpPost]
         [HttpGet]
-        public IActionResult CreateChecklist(string? mekanisk1, string? mekanisk2, string? mekanisk3, string? mekanisk4, string? mekanisk5, string? mekanisk6, string? mekanisk7, string? mekanisk8)
+        [ValidateAntiForgeryToken]
+        public IActionResult Mekanisk(string? mekanisk1, string? mekanisk2, string? mekanisk3, string? mekanisk4, string? mekanisk5, string? mekanisk6, string? mekanisk7, string? mekanisk8)
         {
             var model = new ChecklistViewModel
             {
                 mekanisk1 = mekanisk1,
                 mekanisk2 = mekanisk2,
+                mekanisk3 = mekanisk3,
+                mekanisk4 = mekanisk4,
+                mekanisk5 = mekanisk5,
+                mekanisk6 = mekanisk6,
+                mekanisk7 = mekanisk7,
+                mekanisk8 = mekanisk8
             };
 
             return View();
         }
 
+        public IActionResult Elektro(string? elektro1, string? elektro2, string? elektro3)
+        {
+            var model = new ChecklistViewModel
+            {
+                elektro1 = elektro1,
+                elektro2 = elektro2,
+                elektro3 = elektro3
+            };
+            return View();
+        }
+
+        public IActionResult Hydraulikk(string? hydaulikk1, string? hydraulikk2, string? hydraulikk3, string? hydraulikk4, string? hydraulikk5, string? hydraulikk6, string? hydraulikk7)
+        {
+            var model = new ChecklistViewModel
+            {
+                hydraulikk1 = hydaulikk1,
+                hydraulikk2 = hydraulikk2,
+                hydraulikk3 = hydraulikk3,
+                hydraulikk4 = hydraulikk4,
+                hydraulikk5 = hydraulikk5,
+                hydraulikk6 = hydraulikk6,
+                hydraulikk7 = hydraulikk7
+            };
+            return View();
+        }
+
+        public IActionResult Trykksettinger(string? XXBar1)
+        {
+            var model = new ChecklistViewModel
+            {
+                XXBar1 = XXBar1
+            };
+            return View();
+        }
+
+        public IActionResult Funksjonstest(string? funksjonstest1, string? funksjonstest2, string? funksjonstest3)
+        {
+            var model = new ChecklistViewModel
+            {
+                funksjonstest1 = funksjonstest1,
+                funksjonstest2 = funksjonstest2,
+                funksjonstest3 = funksjonstest3
+            };
+            return View();
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]

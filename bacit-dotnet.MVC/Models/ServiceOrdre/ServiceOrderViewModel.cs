@@ -60,7 +60,6 @@ namespace bacit_dotnet.MVC.Models.ServiceOrdre
         public string? hydraulikk5 { get; set; }
         public string? hydraulikk6 { get; set; }
         public string? hydraulikk7 { get; set; }
-        public string? hydraulikk8 { get; set; }
 
         //For Trykksettinger av sjekklisten
         public string? XXBar1 { get; set; }
