@@ -8,6 +8,10 @@ namespace bacit_dotnet.MVC.Controllers
     [AutoValidateAntiforgeryToken]
     public class ServiceOrderController : Controller
     {
+        public IActionResult Index()
+        {
+            return View();
+        }
         public IActionResult Create()
         {
             return View();
@@ -43,10 +47,13 @@ namespace bacit_dotnet.MVC.Controllers
             return View();
         }
 
+
+
+
+
         [HttpPost]
         [HttpGet]
-       
-        public IActionResult Index(string FirstName, string LastName, string PhoneNumber, string Email, string ProductName, string ProductType, string PreferredTimePeriod, string Comment)
+        public IActionResult CreateServiceform(string FirstName, string LastName, string PhoneNumber, string Email, string ProductName, string ProductType, string PreferredTimePeriod, string Comment)
         {
             var model = new ServiceOrderViewModel
             {
@@ -60,7 +67,7 @@ namespace bacit_dotnet.MVC.Controllers
 
             };
 
-            return View(model);
+            return Redirect("Index");
         }
 
        
@@ -116,7 +123,7 @@ namespace bacit_dotnet.MVC.Controllers
                 elektro2 = elektro2,
                 elektro3 = elektro3
             };
-            return View(model);
+            return View("Index");
         }
 
         public IActionResult Hydraulikk(string? hydraulikk1, string? hydraulikk2, string? hydraulikk3, string? hydraulikk4, string? hydraulikk5, string? hydraulikk6, string? hydraulikk7)
@@ -140,7 +147,7 @@ namespace bacit_dotnet.MVC.Controllers
             {
                 XXBar1 = XXBar1
             };
-            return View(model);
+            return View("Index");
         }
 
         public IActionResult Funksjonstest(string? funksjonstest1, string? funksjonstest2, string? funksjonstest3)
@@ -151,7 +158,7 @@ namespace bacit_dotnet.MVC.Controllers
                 funksjonstest2 = funksjonstest2,
                 funksjonstest3 = funksjonstest3
             };
-            return View(model);
+            return View("Index");
         }
 
         [HttpPost]

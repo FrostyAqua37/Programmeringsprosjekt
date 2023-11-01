@@ -22,21 +22,19 @@
     </thead>
 
     <tbody>
-              <tr>
-                <td>
-                    @Html.DisplayFor(model => model.OrderId)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.ProductName)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-itemid="@Model.OrderId">Edit</a> |
-                    <a asp-action="Details" asp-route-itemid="@Model.OrderId">Details</a> |
-                    <a asp-action="Delete" asp-route-itemid="@Model.OrderId">Delete</a>
-                </td>   
-            </tr>  
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ProductName)
+            </td>
+            <td>
+             
+            </td>
+        </tr>
     </tbody>
 </table>
