@@ -4,55 +4,9 @@
 @{
     ViewData["Title"] = "Checklist";
 }
-
-@{
-    //Mekanisk sjekkliste
-    var mekanisk = new string[] {
-        "Sjekk clutch lameller for slitasje",
-        "Sjekk bremser. Bånd/Pal",
-        "Sjekk lager for trommel",
-        "Sjekk PTO og opplagring",
-        "Sjekk kjedestrammer",
-        "Sjekk wire",
-        "Sjekk pinion lager",
-        "Sjekk kile på kjedehjul"
-    };
-
-    //Hydraulisk sjekkliste
-    var hydraulikk = new string[] {
-        "Sjekk hydraulikk sylinder for lekkasje",
-        "Sjekk slanger for skader og lekkasje",
-        "Test hydraulikkblokk i testbenk",
-        "Skift olje i tank",
-        "Skift olje på gir boks",
-        "Sjekk Ringsylinder åpne og skift tetninger",
-        "Sjekk bremse sylinder åpne og skift tetninger"
-    };
-
-    //Elektro sjekkliste
-    var elektro = new string[] {
-        "Sjekk ledningsnett på vinsj",
-        "Sjekk og test radio",
-        "Sjekk og test knappekasse"
-    };
-
-    //Trykk settinger sjekkliste
-    var trykkSettinger = new string[] {
-        "xx-Bar"
-    };
-
-    //Funksjonstest sjekkliste
-    var funksjonsTest = new string[] {
-        "Test vinsj og kjør alle funksjoner",
-        "Trekkraft KN",
-        "Bremse kraft KN"
-    };
-}
+<script src="~/js/Form.js"></script>
 
 <h1>Checklist</h1>
-
-<h2>Sjekkliste</h2>
-
 
 <table class="table">
     <thead>
@@ -73,8 +27,8 @@
     </thead>
  </table>
 
-<form asp-action="Mekanisk" method="post">
-    <fieldset id="mekanisk1">
+<form asp-action="Mekanisk" method="post" name="Mekanisk">
+    <fieldset action="Mekanisk" id="mekanisk1">
         <label>Sjekk crutch lameller for slitasje</label>
         <input type="radio" value="OK" name="mekanisk1">
         <input type="radio" value="BørSkiftes" name="mekanisk1">
@@ -129,9 +83,6 @@
         <input type="radio" value="BørSkiftes" name="mekanisk8">
         <input type="radio" value="Defekt" name="mekanisk8">
     </fieldset>
-
-    <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <table class="table">
@@ -153,7 +104,7 @@
     </thead>
 </table>
 
-<form asp-action="Hydraulikk" method="post">
+<form asp-action="Hydraulikk" method="post" name="Hydraulikk">
     <fieldset id="hydraulikk1">
         <label>Sjekk hydraulikk sylinder for lekkasje</label>
         <input type="radio" value="OK" name="hydraulikk1">
@@ -202,9 +153,6 @@
         <input type="radio" value="BørSkiftes" name="hydraulikk7">
         <input type="radio" value="Defekt" name="hydraulikk7">
     </fieldset>
-
-    <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <table class="table">
@@ -226,7 +174,7 @@
     </thead>
 </table>
 
-<form asp-action="Elektro" method="post">
+<form asp-action="Elektro" method="post" name="Elektro">
     <fieldset id="elektro1">
         <label>Sjekk ledningsnett på vinsj</label>
         <input type="radio" value="OK" name="elektro1">
@@ -247,9 +195,6 @@
         <input type="radio" value="BørSkiftes" name="elektro3">
         <input type="radio" value="Defekt" name="elektro3">
     </fieldset>
-
-    <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <table class="table">
@@ -271,16 +216,13 @@
     </thead>
 </table>
 
-<form asp-action="Trykksettinger" method="post">
+<form asp-action="Trykksettinger" method="post" name="Trykksettinger">
     <fieldset id="XXBar1">
         <label>XX-Bar</label>
         <input type="radio" value="OK" name="XXBar1">
         <input type="radio" value="BørSkiftes" name="XXBar1">
         <input type="radio" value="Defekt" name="XXBar1">
     </fieldset>
-
-    <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <table class="table">
@@ -302,7 +244,7 @@
     </thead>
 </table>
 
-<form asp-action="Funksjonstest" method="post">
+<form asp-action="Funksjonstest" method="post" name="Funksjonstest">
     <fieldset id="funksjonstest1">
         <label>Teste Vinsj og kjør alle funksjoner</label>
         <input type="radio" value="OK" name="funksjonstest1">
@@ -323,12 +265,7 @@
         <input type="radio" value="BørSkiftes" name="funksjonstest3">
         <input type="radio" value="Defekt" name="funksjonstest3">
     </fieldset>
-
     <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-
-
-
-
+<button type="submit" class="btn btn-primary" onclick="submitForms()">Submit</button>

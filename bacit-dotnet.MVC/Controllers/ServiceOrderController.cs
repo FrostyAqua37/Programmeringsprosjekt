@@ -63,6 +63,8 @@ namespace bacit_dotnet.MVC.Controllers
             return View(model);
         }
 
+       
+
         [HttpPost]
         [HttpGet]
         [ValidateAntiForgeryToken]
@@ -103,7 +105,7 @@ namespace bacit_dotnet.MVC.Controllers
                 mekanisk8 = mekanisk8
             };
 
-            return View();
+            return View(model);
         }
 
         public IActionResult Elektro(string? elektro1, string? elektro2, string? elektro3)
@@ -114,14 +116,14 @@ namespace bacit_dotnet.MVC.Controllers
                 elektro2 = elektro2,
                 elektro3 = elektro3
             };
-            return View();
+            return View(model);
         }
 
-        public IActionResult Hydraulikk(string? hydaulikk1, string? hydraulikk2, string? hydraulikk3, string? hydraulikk4, string? hydraulikk5, string? hydraulikk6, string? hydraulikk7)
+        public IActionResult Hydraulikk(string? hydraulikk1, string? hydraulikk2, string? hydraulikk3, string? hydraulikk4, string? hydraulikk5, string? hydraulikk6, string? hydraulikk7)
         {
             var model = new ChecklistViewModel
             {
-                hydraulikk1 = hydaulikk1,
+                hydraulikk1 = hydraulikk1,
                 hydraulikk2 = hydraulikk2,
                 hydraulikk3 = hydraulikk3,
                 hydraulikk4 = hydraulikk4,
@@ -129,7 +131,7 @@ namespace bacit_dotnet.MVC.Controllers
                 hydraulikk6 = hydraulikk6,
                 hydraulikk7 = hydraulikk7
             };
-            return View();
+            return View(model);
         }
 
         public IActionResult Trykksettinger(string? XXBar1)
@@ -138,7 +140,7 @@ namespace bacit_dotnet.MVC.Controllers
             {
                 XXBar1 = XXBar1
             };
-            return View();
+            return View(model);
         }
 
         public IActionResult Funksjonstest(string? funksjonstest1, string? funksjonstest2, string? funksjonstest3)
@@ -149,7 +151,7 @@ namespace bacit_dotnet.MVC.Controllers
                 funksjonstest2 = funksjonstest2,
                 funksjonstest3 = funksjonstest3
             };
-            return View();
+            return View(model);
         }
 
         [HttpPost]
