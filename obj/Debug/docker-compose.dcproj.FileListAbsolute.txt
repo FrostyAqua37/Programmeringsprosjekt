@@ -1,0 +1,12 @@
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\bin\Debug\MyStore.deps.json
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\bin\Debug\MyStore.runtimeconfig.json
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\bin\Debug\appsettings.Development.json
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\bin\Debug\appsettings.json
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\bin\Debug\MyStore.staticwebassets.runtime.json
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\bin\Debug\MyStore.exe
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\bin\Debug\MyStore.dll
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\bin\Debug\System.Data.SqlClient.dll
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\bin\Debug\MyStore.pdb
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\thean\OneDrive\Skrivebord\kongsgård\MyStore\obj\Debug\docker-compose.dcproj.CopyComplete

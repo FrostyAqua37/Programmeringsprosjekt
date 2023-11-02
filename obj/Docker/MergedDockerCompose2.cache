@@ -1,0 +1,18 @@
+name: dockercompose8086347513318832972
+services:
+  mystore:
+    build:
+      context: C:\Myproject\MyStore
+      dockerfile: MyStore\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: mystore
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+networks:
+  default:
+    name: dockercompose8086347513318832972_default
