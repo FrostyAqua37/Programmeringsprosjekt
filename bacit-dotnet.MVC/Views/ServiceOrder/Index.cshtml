@@ -1,10 +1,11 @@
-﻿@model bacit_dotnet.MVC.Models.ServiceOrdre.ServiceOrderViewModel
+﻿@model bacit_dotnet.MVC.Models.ServiceOrdre.Serviceform
+
 <h1>Oversikt</h1>
 
 <p>
-    <a asp-controller="ServiceOrder" asp-action="Create">Create new Serviceform</a>
+    <a asp-controller="ServiceOrder" asp-action="Create">Create a new Serviceform</a>
 </p>
-
+          
 <table class="table">
     <thead>
         <tr>
@@ -21,20 +22,26 @@
         </tr>
     </thead>
 
-    <tbody>
-        <tr>
-            <td>
-                @Html.DisplayFor(model => model.OrderId)
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.ProductName)
-            </td>
-            <td>
-             
-            </td>
-        </tr>
-    </tbody>
+    @foreach(var item in Model.serviceform)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @item.OrderId
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.ProductName
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    }
+ 
 </table>

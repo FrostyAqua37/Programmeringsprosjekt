@@ -1,16 +1,16 @@
-﻿@model bacit_dotnet.MVC.Models.ServiceOrdre.ServiceOrderViewModel
+﻿@model bacit_dotnet.MVC.Models.ServiceOrdre.Serviceform
 
 @{
     ViewData["Title"] = "Create Serviceform";
 }
 
+<!--<script src="~/js/Form.js"></script> -->
 <h1> Create a serviceform</h1>
 
 @Html.AntiForgeryToken()
 @Html.ValidationSummary()
 
-<form asp-action="CreateServiceform" method="post">
-
+<form asp-action="Index" method="post" name="CreateServiceform">
     <label asp-for="FirstName">First Name</label>
     <input asp-for="FirstName" class="form-control" placeholder="First Name" />
     <br />
@@ -43,5 +43,8 @@
     <input asp-for="Comment" class="form-control" placeholder="Comment" />
     <br />
 
-    <button type="submit" class="btn btn-primary">Create</button>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+ 
+

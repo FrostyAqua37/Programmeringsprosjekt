@@ -6,3 +6,8 @@ submitForms = function() {
     document.forms["Trykksettinger"].submit();
     document.forms["Funksjonstest"].submit();
 }
+
+submitForms2 = function () {
+    document.forms["CreateServiceform"].submit();
+    document.forms["CreateWorkDocument"].submit();
+}
