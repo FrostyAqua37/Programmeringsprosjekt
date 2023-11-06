@@ -12,9 +12,6 @@
 @Html.ValidationSummary()
 
 <form asp-action="Index" method="post">
-    <label asp-for="OrderId">Order Id</label>
-    <input asp-for="OrderId" class="form-control" placeholder="OrderId" />
-
     <label asp-for="FirstName">First Name</label>
     <input asp-for="FirstName" class="form-control" placeholder="First Name" />
     <br />
@@ -51,10 +48,6 @@
     <button type="submit" class="btn btn-primary" onclick="submitForms2()">Submit</button>
 </form>
 <br />
-
-
-
-
 
 @if (Model != null)
         {

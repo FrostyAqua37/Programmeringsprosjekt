@@ -53,7 +53,7 @@ namespace bacit_dotnet.MVC.Controllers
 
         [HttpPost]
         [HttpGet]
-        public IActionResult Index(int OrderId, string FirstName, string LastName, string PhoneNumber, string Email, string ProductName, string ProductType, string PreferredTimePeriod, string Comment)
+        public IActionResult Index(string FirstName, string LastName, string PhoneNumber, string Email, string ProductName, string ProductType, string PreferredTimePeriod, string Comment)
         {
             var model = new Serviceform
             {
@@ -61,7 +61,6 @@ namespace bacit_dotnet.MVC.Controllers
                 {
                     new Serviceform
                     {
-                        OrderId = 1,
                         FirstName = FirstName,
                         LastName = LastName,
                         PhoneNumber = PhoneNumber,
@@ -79,7 +78,7 @@ namespace bacit_dotnet.MVC.Controllers
 
         [HttpPost]
         [HttpGet]
-        public IActionResult WorkDocument(string Week, string Order, string Inquiry, bool CaseCompleted, string CustomerInfo, DateTime PlannedDelivery, DateTime ProductReceivedDate, DateTime AgreedCompletionDate, DateTime ServiceCompletedDate, string ServiceHours, bool HasOrderNumber, bool HasServiceForm)
+        public IActionResult WorkDocument(string Week, string Order, string Inquiry, bool CaseCompleted, string CustomerInfo, DateTime? PlannedDelivery, DateTime? ProductReceivedDate, DateTime? AgreedCompletionDate, DateTime? ServiceCompletedDate, string ServiceHours, bool HasOrderNumber, bool HasServiceForm)
         {
             var model = new Serviceform
             { 
@@ -87,7 +86,18 @@ namespace bacit_dotnet.MVC.Controllers
                 {
                     new Serviceform
                     {
-                    Week = "Eivind"
+                    Week = Week,
+                    Order = Order,
+                    Inquiry = Inquiry,
+                    CaseCompleted = CaseCompleted,
+                    CustomerInfo = CustomerInfo,
+                    PlannedDelivery = PlannedDelivery,
+                    ProductReceivedDate = ProductReceivedDate,
+                    AgreedCompletionDate = AgreedCompletionDate,
+                    ServiceCompletedDate = ServiceCompletedDate,
+                    ServiceHours = ServiceHours,
+                    HasOrderNumber = HasOrderNumber,
+                    HasServiceForm = HasServiceForm
                     }
                 }
             };
