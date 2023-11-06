@@ -5,43 +5,121 @@
 <p>
     <a asp-controller="ServiceOrder" asp-action="Create">Create a new Serviceform</a>
 </p>
-          
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.OrderId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
 
-    @foreach(var item in Model.serviceform)
-    {
-        <tbody>
-            <tr>
-                <td>
-                    @item.OrderId
-                </td>
-                <td>
-                    @item.Email
-                </td>
-                <td>
-                    @item.ProductName
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>
-                </td>
-            </tr>
-        </tbody>
-    }
- 
-</table>
+<h1>Serviceform</h1>
+
+@Html.AntiForgeryToken()
+@Html.ValidationSummary()
+
+<form asp-action="Index" method="post">
+    <label asp-for="OrderId">Order Id</label>
+    <input asp-for="OrderId" class="form-control" placeholder="OrderId" />
+
+    <label asp-for="FirstName">First Name</label>
+    <input asp-for="FirstName" class="form-control" placeholder="First Name" />
+    <br />
+
+    <label asp-for="LastName">Last Name</label>
+    <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+    <br />
+
+    <label asp-for="PhoneNumber">Phone Number</label>
+    <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" />
+    <br />
+
+    <label asp-for="Email">Email</label>
+    <input asp-for="Email" class="form-control" placeholder="Email" />
+    <br />
+
+    <label asp-for="ProductName">Product Name</label>
+    <input asp-for="ProductName" class="form-control" placeholder="Product Name" />
+    <br />
+
+    <label asp-for="ProductType">Product Type</label>
+    <input asp-for="ProductType" class="form-control" placeholder="Product Type" />
+    <br />
+
+    <label asp-for="PreferredTimePeriod">Preferred Time Period</label>
+    <input asp-for="PreferredTimePeriod" class="form-control" placeholder="Preferred Time Period" />
+    <br />
+
+    <label asp-for="Comment">Comment</label>
+    <input asp-for="Comment" class="form-control" placeholder="Comment" />
+    <br />
+
+    <br />
+    <button type="submit" class="btn btn-primary" onclick="submitForms2()">Submit</button>
+</form>
+<br />
+
+
+
+
+
+@if (Model != null)
+        {
+            @foreach (var item in Model.serviceform)
+            {
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.OrderId)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.OrderId
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.FirstName
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.LastName
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.PhoneNumber
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.Email
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.ProductName
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ProductType)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.ProductType
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.PreferredTimePeriod)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.PreferredTimePeriod
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Comment)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.Comment
+                    </dd>
+                </dl>
+
+            }
+
+        }
+  
+       

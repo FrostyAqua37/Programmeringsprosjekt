@@ -62,10 +62,10 @@ namespace bacit_dotnet.MVC.Controllers
                     new Serviceform
                     {
                         OrderId = 1,
-                        FirstName = "Eivind",
-                        LastName = "Chen",
+                        FirstName = FirstName,
+                        LastName = LastName,
                         PhoneNumber = PhoneNumber,
-                        Email = "Email",
+                        Email = Email,
                         ProductName = ProductName,
                         ProductType = ProductType,
                         PreferredTimePeriod = PreferredTimePeriod,
