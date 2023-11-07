@@ -5,6 +5,9 @@
 <p>
     <a asp-controller="ServiceOrder" asp-action="Create">Create a new Serviceform</a>
 </p>
+<p>
+    <a asp-controller="ServiceOrder" asp-action="Details">Details</a>
+</p>
 
 <h1>Serviceform</h1>
 
@@ -51,7 +54,7 @@
 
 @if (Model != null)
         {
-            @foreach (var item in Model.serviceform)
+            foreach (var item in Model.serviceform)
             {
                 <hr />
                 <dl class="row">
