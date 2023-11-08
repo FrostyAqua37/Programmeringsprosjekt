@@ -7,6 +7,8 @@ namespace bacit_dotnet.MVC.Models.ServiceOrdre
       
         public List<Serviceform> workDocument { get; set; }
         public List<Serviceform> serviceform { get; set; }
+        [Key]
+        [ScaffoldColumn(false)]
         public int OrderId { get; set; }
         public string FirstName { get; set; } 
         public string LastName { get; set; }
@@ -24,10 +26,10 @@ namespace bacit_dotnet.MVC.Models.ServiceOrdre
         public string Inquiry { get; set; }
         public bool CaseCompleted { get; set; }
         public string CustomerInfo { get; set; }
-        public DateTime PlannedDelivery { get; set; }
-        public DateTime ProductReceivedDate { get; set; }
-        public DateTime AgreedCompletionDate { get; set; }
-        public DateTime ServiceCompletedDate { get; set; }
+        public DateTime? PlannedDelivery { get; set; }
+        public DateTime? ProductReceivedDate { get; set; }
+        public DateTime? AgreedCompletionDate { get; set; }
+        public DateTime? ServiceCompletedDate { get; set; }
         public string ServiceHours { get; set; }
         public bool HasOrderNumber { get; set; }
         public bool HasServiceForm { get; set; }
