@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Checklist";
 }
+<link rel="stylesheet" href="~/css/ServiceOrder/Checklist.css" />
 <script src="~/js/Form.js"></script>
 
 <h1>Checklist</h1>
@@ -11,18 +12,10 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                <label>Mekanisk</label>
-            </th>
-            <th>
-                <label>OK</label>
-            </th>
-            <th>
-                <label>Bør Skiftes</label>
-            </th>
-            <th>
-                <label>Defekt</label>
-            </th> 
+            <th id="Mekanisk">Mekanisk</th>
+            <th id="OK">OK</th>
+            <th id="BorSkiftes">Bør Skiftes</th>
+            <th id="Defekt">Defekt</th> 
         </tr>
     </thead>
  </table>
@@ -30,7 +23,7 @@
 <form asp-action="Mekanisk" method="post" name="Mekanisk">
     <fieldset action="Mekanisk" id="mekanisk1">
         <label>Sjekk crutch lameller for slitasje</label>
-        <input type="radio" value="OK" name="mekanisk1">
+        <input type="radio" value="OK" name="mekanisk1" id="Mekanisk1"/>
         <input type="radio" value="BørSkiftes" name="mekanisk1">
         <input type="radio" value="Defekt" name="mekanisk1">
     </fieldset>
@@ -84,22 +77,16 @@
         <input type="radio" value="Defekt" name="mekanisk8">
     </fieldset>
 </form>
+<br />
+
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                <label>Hydraulikk</label>
-            </th>
-            <th>
-                <label>OK</label>
-            </th>
-            <th>
-                <label>Bør Skiftes</label>
-            </th>
-            <th>
-                <label>Defekt</label>
-            </th>
+            <th id="Hydraulikk">Hydraulikk</th>
+            <th id="OK">OK</th>
+            <th id="BorSkiftes">Bør Skiftes</th>
+            <th id="Defekt">Defekt</th>
         </tr>
     </thead>
 </table>
@@ -154,22 +141,16 @@
         <input type="radio" value="Defekt" name="hydraulikk7">
     </fieldset>
 </form>
+<br />
+
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                <label>Elektro</label>
-            </th>
-            <th>
-                <label>OK</label>
-            </th>
-            <th>
-                <label>Bør Skiftes</label>
-            </th>
-            <th>
-                <label>Defekt</label>
-            </th>
+            <th id="Elektro">Elektro</th>
+            <th id="OK">OK</th>
+            <th id="BorSkiftes">Bør Skiftes</th>
+            <th id="Defekt">Defekt</th>
         </tr>
     </thead>
 </table>
@@ -196,22 +177,15 @@
         <input type="radio" value="Defekt" name="elektro3">
     </fieldset>
 </form>
+<br />
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                <label>Trykksettinger</label>
-            </th>
-            <th>
-                <label>OK</label>
-            </th>
-            <th>
-                <label>Bør Skiftes</label>
-            </th>
-            <th>
-                <label>Defekt</label>
-            </th>
+            <th id="Trykksettinger">Trykksettinger</th>
+            <th id="OK">OK</th>
+            <th id="BorSkiftes">Bør Skiftes</th>
+            <th id="Defekt">Defekt</th>
         </tr>
     </thead>
 </table>
@@ -224,22 +198,15 @@
         <input type="radio" value="Defekt" name="XXBar1">
     </fieldset>
 </form>
+<br />
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                <label>Funksjonstest</label>
-            </th>
-            <th>
-                <label>OK</label>
-            </th>
-            <th>
-                <label>Bør Skiftes</label>
-            </th>
-            <th>
-                <label>Defekt</label>
-            </th>
+            <th id="Funksjonstest">Funksjonstest</th>
+            <th id="OK">OK</th>
+            <th id="BorSkiftes">Bør Skiftes</th>
+            <th id="Defekt">Defekt</th>
         </tr>
     </thead>
 </table>
