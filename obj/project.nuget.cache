@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QSv/fcmgV9p9L5Cgo3ctgEuNbhZYL7mfiWJBXiuEqf4zA3BIcJlxhImHWcNxO8TwCoLlhRcqzhohA//ehnvd6A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\thean\\OneDrive\\Skrivebord\\Programmeringsprosjekt\\forsteforsok\\forsteforsok.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\thean\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
+  ],
+  "logs": []
+}
