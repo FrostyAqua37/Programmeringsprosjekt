@@ -10,6 +10,7 @@
 <h1>Checklist</h1>
 
 <table class="table">
+    <form asp-action="Mekanisk" method="post" name="Mekanisk">
     <thead>
         <tr>
             <th id="Mekanisk">Mekanisk</th>
@@ -18,63 +19,65 @@
             <th id="Defekt">Defekt</th> 
         </tr>
     </thead>
+    </form>
  </table>
 
 <form asp-action="Mekanisk" method="post" name="Mekanisk">
-    <fieldset action="Mekanisk" id="mekanisk1">
-        <label>Sjekk crutch lameller for slitasje</label>
-        <input type="radio" value="OK" name="mekanisk1" id="Mekanisk1"/>
-        <input type="radio" value="BørSkiftes" name="mekanisk1">
-        <input type="radio" value="Defekt" name="mekanisk1">
+    <fieldset id="item">
+        <label id="text">Sjekk crutch lameller for slitasje</label>
+        <label id="button1"> <input type="radio" value="OK" name="mekanisk1" /></label>
+        <label id="button2"> <input type="radio" value="BørSkiftes" name="mekanisk1" ></label>  
+        <label id="button3"> <input type="radio" value="Defekt" name="mekanisk1"></label>
     </fieldset>
 
-    <fieldset id="mekanisk2">
-        <label>Sjekk brenser. Bånd/Pal</label>
-        <input type="radio" value="OK" name="mekanisk2">
-        <input type="radio" value="BørSkiftes" name="mekanisk2">
-        <input type="radio" value="Defekt" name="mekanisk2">
+
+    <fieldset id="item">
+        <label id="text">Sjekk brenser. Bånd/Pal</label>
+        <label id="button1"><input type="radio" value="OK" name="mekanisk2"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="mekanisk2"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="mekanisk2"></label>
     </fieldset>
 
-    <fieldset id="mekanisk3">
-        <label>Sjekk lager for trommel</label>
-        <input type="radio" value="OK" name="mekanisk3">
-        <input type="radio" value="BørSkiftes" name="mekanisk3">
-        <input type="radio" value="Defekt" name="mekanisk3">
+    <fieldset id="item">
+        <label id="text">Sjekk lager for trommel</label>
+        <label id="button1"><input type="radio" value="OK" name="mekanisk3"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="mekanisk3"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="mekanisk3"></label>
     </fieldset>
 
-    <fieldset id="mekanisk4">
-        <label>Sjekk PTO og opplagring</label>
-        <input type="radio" value="OK" name="mekanisk4">
-        <input type="radio" value="BørSkiftes" name="mekanisk4">
-        <input type="radio" value="Defekt" name="mekanisk4">
+    <fieldset id="item">
+        <label id="text">Sjekk PTO og opplagring</label>
+        <label id="button1"><input type="radio" value="OK" name="mekanisk4"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="mekanisk4"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="mekanisk4"></label>
     </fieldset>
 
-    <fieldset id="mekanisk5">
-        <label>Sjekk kjedestrammer</label>
-        <input type="radio" value="OK" name="mekanisk5">
-        <input type="radio" value="BørSkiftes" name="mekanisk5">
-        <input type="radio" value="Defekt" name="mekanisk5">
+    <fieldset id="item">
+        <label id="text">Sjekk kjedestrammer</label>
+        <label id="button1"><input type="radio" value="OK" name="mekanisk5"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="mekanisk5"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="mekanisk5"></label>
     </fieldset>
 
-    <fieldset id="mekanisk6">
-        <label>Sjekk wire</label>
-        <input type="radio" value="OK" name="mekanisk6">
-        <input type="radio" value="BørSkiftes" name="mekanisk6">
-        <input type="radio" value="Defekt" name="mekanisk6">
+    <fieldset id="item">
+        <label id="text">Sjekk wire</label>
+        <label id="button1"><input type="radio" value="OK" name="mekanisk6"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="mekanisk6"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="mekanisk6"></label>
     </fieldset>
 
-    <fieldset id="mekanisk7">
-        <label>Sjekk pinion lager</label>
-        <input type="radio" value="OK" name="mekanisk7">
-        <input type="radio" value="BørSkiftes" name="mekanisk7">
-        <input type="radio" value="Defekt" name="mekanisk7">
+    <fieldset id="item">
+        <label id="text">Sjekk pinion lager</label>
+        <label id="button1"><input type="radio" value="OK" name="mekanisk7"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="mekanisk7"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="mekanisk7"></label>
     </fieldset>
 
-    <fieldset id="mekanisk8">
-        <label>Sjekk kile på kjedehjul</label>
-        <input type="radio" value="OK" name="mekanisk8">
-        <input type="radio" value="BørSkiftes" name="mekanisk8">
-        <input type="radio" value="Defekt" name="mekanisk8">
+    <fieldset id="item">
+        <label id="text">Sjekk kile på kjedehjul</label>
+        <label id="button1"><input type="radio" value="OK" name="mekanisk8"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="mekanisk8"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="mekanisk"></label>
     </fieldset>
 </form>
 <br />
@@ -92,53 +95,53 @@
 </table>
 
 <form asp-action="Hydraulikk" method="post" name="Hydraulikk">
-    <fieldset id="hydraulikk1">
-        <label>Sjekk hydraulikk sylinder for lekkasje</label>
-        <input type="radio" value="OK" name="hydraulikk1">
-        <input type="radio" value="BørSkiftes" name="hydraulikk1">
-        <input type="radio" value="Defekt" name="hydralikk1">
+    <fieldset id="item">
+        <label id="text">Sjekk hydraulikk sylinder for lekkasje</label>
+        <label id="button1"><input type="radio" value="OK" name="hydraulikk1"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="hydraulikk1"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="hydraulikk1"></label>
     </fieldset>
 
-    <fieldset id="hydraulikk2">
-        <label>Sjekk slanger for skader og lekkasje</label>
-        <input type="radio" value="OK" name="hydraulikk2">
-        <input type="radio" value="BørSkiftes" name="hydraulikk2">
-        <input type="radio" value="Defekt" name="hydraulikk2">
+    <fieldset id="item">
+        <label id="text">Sjekk slanger for skader og lekkasje</label>
+        <label id="button1"><input type="radio" value="OK" name="hydraulikk2"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="hydraulikk2"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="hydraulikk2"></label>
     </fieldset>
 
-    <fieldset id="hydraulikk3">
-        <label>Test hydraulikkblokk i testbenk</label>
-        <input type="radio" value="OK" name="hydraulikk3">
-        <input type="radio" value="BørSkiftes" name="hydraulikk3">
-        <input type="radio" value="Defekt" name="hydraulikk3">
+    <fieldset id="item">
+        <label id="text">Test hydraulikkblokk i testbenk</label>
+        <label id="button1"><input type="radio" value="OK" name="hydraulikk3"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="hydraulikk3"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="hydraulikk3"></label>
     </fieldset>
 
-    <fieldset id="hydraulikk4">
-        <label>Skift olje i tank</label>
-        <input type="radio" value="OK" name="hydraulikk4">
-        <input type="radio" value="BørSkiftes" name="hydraulikk4">
-        <input type="radio" value="Defekt" name="hydraulikk4">
+    <fieldset id="item">
+        <label id="text">Skift olje i tank</label>
+        <label id="button1"><input type="radio" value="OK" name="hydraulikk4"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="hydraulikk4"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="hydraulikk4"></label>
     </fieldset>
 
-    <fieldset id="hydraulikk5">
-        <label>Skift olje på gir boks</label>
-        <input type="radio" value="OK" name="hydraulikk5">
-        <input type="radio" value="BørSkiftes" name="hydraulikk5">
-        <input type="radio" value="Defekt" name="hydraulikk5">
+    <fieldset id="item">
+        <label id="text">Skift olje på gir boks</label>
+        <label id="button1"><input type="radio" value="OK" name="hydraulikk5"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="hydraulikk5"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="hydraulikk5"></label>
     </fieldset>
 
-    <fieldset id="hydraulikk6">
-        <label>Sjekk ringsylinder åpne og skift tetninger</label>
-        <input type="radio" value="OK" name="hydraulikk6">
-        <input type="radio" value="BørSkiftes" name="hydraulikk6">
-        <input type="radio" value="Defekt" name="hydraulikk6">
+    <fieldset id="item">
+        <label id="text">Sjekk ringsylinder åpne og skift tetninger</label>
+        <label id="button1"><input type="radio" value="OK" name="hydraulikk6"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="hydraulikk6"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="hydraulikk6"></label>
     </fieldset>
 
-    <fieldset id="hydraulikk7">
-        <label>Sjekk bremse og sylinder åpne og skift tetninger</label>
-        <input type="radio" value="OK" name="hydraulikk7">
-        <input type="radio" value="BørSkiftes" name="hydraulikk7">
-        <input type="radio" value="Defekt" name="hydraulikk7">
+    <fieldset id="item">
+        <label id="text">Sjekk bremse og sylinder åpne og skift tetninger</label>
+        <label id="button1"><input type="radio" value="OK" name="hydraulikk7"></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="hydraulikk7"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="hydraulikk7"></label>
     </fieldset>
 </form>
 <br />
@@ -156,25 +159,25 @@
 </table>
 
 <form asp-action="Elektro" method="post" name="Elektro">
-    <fieldset id="elektro1">
-        <label>Sjekk ledningsnett på vinsj</label>
-        <input type="radio" value="OK" name="elektro1">
-        <input type="radio" value="BørSkiftes" name="elektro1">
-        <input type="radio" value="Defekt" name="elektro1">
+    <fieldset id="item">
+        <label id="text">Sjekk ledningsnett på vinsj</label>
+        <label id="button1"><input type="radio" value="OK" name="elektro1" /></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="elektro1"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="elektro1"></label>
     </fieldset>
 
-    <fieldset id="elektro2">
-        <label>Sjekk og test radio</label>
-        <input type="radio" value="OK" name="elektro2">
-        <input type="radio" value="BørSkiftes" name="elektro2">
-        <input type="radio" value="Defekt" name="elektro2">
+    <fieldset id="item">
+        <label id="text">Sjekk og test radio</label>
+        <label id="button1"><input type="radio" value="OK" name="elektro2" /></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="elektro2"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="elektro2"></label>
     </fieldset>
 
-    <fieldset id="elektro3">
-        <label>Sjekk og test knappekasse</label>
-        <input type="radio" value="OK" name="elektro3">
-        <input type="radio" value="BørSkiftes" name="elektro3">
-        <input type="radio" value="Defekt" name="elektro3">
+    <fieldset id="item">
+        <label id="text">Sjekk og test knappekasse</label>
+        <label id="button1"><input type="radio" value="OK" name="elektro3" /></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="elektro3"></label>
+        <label id="button3"><input type="radio" value="Defekt" name="elektro3"></label>
     </fieldset>
 </form>
 <br />
@@ -191,11 +194,11 @@
 </table>
 
 <form asp-action="Trykksettinger" method="post" name="Trykksettinger">
-    <fieldset id="XXBar1">
-        <label>XX-Bar</label>
-        <input type="radio" value="OK" name="XXBar1">
-        <input type="radio" value="BørSkiftes" name="XXBar1">
-        <input type="radio" value="Defekt" name="XXBar1">
+    <fieldset id="item">
+        <label id="text">XX-Bar</label>
+        <label id="button1"><input type="radio" value="OK" name="XXBar1" /></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="XXBar1" /></label>
+        <label id="button3"><input type="radio" value="Defekt" name="XXBar1" /></label>
     </fieldset>
 </form>
 <br />
@@ -212,25 +215,25 @@
 </table>
 
 <form asp-action="Funksjonstest" method="post" name="Funksjonstest">
-    <fieldset id="funksjonstest1">
-        <label>Teste Vinsj og kjør alle funksjoner</label>
-        <input type="radio" value="OK" name="funksjonstest1">
-        <input type="radio" value="BørSkiftes" name="funksjonstest1">
-        <input type="radio" value="Defekt" name="funksjonstest1">
+    <fieldset id="item">
+        <label id="text">Teste Vinsj og kjør alle funksjoner</label>
+        <label id="button1"><input type="radio" value="OK" name="funksjonstest1" /></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="funksjonstest1" /></label>
+        <label id="button3"><input type="radio" value="Defekt" name="funksjonstest1" /></label>
     </fieldset>
 
-    <fieldset id="funksjonstest2">
-        <label>Trekkraft KN</label>
-        <input type="radio" value="OK" name="funksjonstest2">
-        <input type="radio" value="BørSkiftes" name="funksjonstest2">
-        <input type="radio" value="Defekt" name="funksjonstest2">
+    <fieldset id="item">
+        <label id="text">Trekkraft KN</label>
+        <label id="button1"><input type="radio" value="OK" name="funksjonstest2" /></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="funksjonstest2" /></label>
+        <label id="button3"><input type="radio" value="Defekt" name="funksjonstest2" /></label>
     </fieldset>
 
-    <fieldset id="funksjonstest3">
-        <label>Bremsekraft KN</label>
-        <input type="radio" value="OK" name="funksjonstest3">
-        <input type="radio" value="BørSkiftes" name="funksjonstest3">
-        <input type="radio" value="Defekt" name="funksjonstest3">
+    <fieldset id="item">
+        <label id="text">Bremsekraft KN</label>
+        <label id="button1"><input type="radio" value="OK" name="funksjonstest3" /></label>
+        <label id="button2"><input type="radio" value="BørSkiftes" name="funksjonstest3" /></label>
+        <label id="button3"><input type="radio" value="Defekt" name="funksjonstest3" /></label>
     </fieldset>
     <br />
 </form>

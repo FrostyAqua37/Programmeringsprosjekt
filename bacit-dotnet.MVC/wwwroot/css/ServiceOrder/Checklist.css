@@ -3,21 +3,48 @@
 }
 
 #OK, #BorSkiftes, #Defekt {
+    position: relative;
     width: 2%;
+    height: auto;
     text-align: center;
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
 
-#mekanisk1, #mekanisk2, #mekanisk3, #mekanisk4, #mekanisk5, #mekanisk6, #mekanisk7, #mekanisk8{
-    border-bottom: 1px solid black;
+#text {
+    width: auto;
+    padding: 0.25rem;
+    border-right: 1px solid black;
+}
+
+#button1, #button2, #button3 {
+    width: 10%;
+    padding: 0.25rem;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    text-align: center;
+}
+
+#button1 {
+}
+
+#button3 {
+    left: 51px;
 }
 
 #Mekanisk, #Hydraulikk, #Elektro, #Trykksettinger, #Funksjonstest {
     width: 20%;
     height: auto;
-    padding: 0.25rem;
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
 
+#item {
+    border-bottom: 1px solid black;
+}
+
+form {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}

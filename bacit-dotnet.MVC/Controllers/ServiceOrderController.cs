@@ -61,14 +61,14 @@ namespace bacit_dotnet.MVC.Controllers
                 {
                     new Serviceform
                     {
-                        FirstName = FirstName,
-                        LastName = LastName,
-                        PhoneNumber = PhoneNumber,
-                        Email = Email,
-                        ProductName = ProductName,
-                        ProductType = ProductType,
-                        PreferredTimePeriod = PreferredTimePeriod,
-                        Comment = Comment
+                        FirstName = "Eivind",
+                        LastName = "Chen",
+                        PhoneNumber = "123456789",
+                        Email = "Email",
+                        ProductName = "Vinsj",
+                        ProductType = "nyeste",
+                        PreferredTimePeriod = "Uke 46",
+                        Comment = "Dette er en kommentar"
                        
                     }
                 }
