@@ -11,37 +11,115 @@
 
 <form asp-action="Index" method="post">
 
-    <label asp-for="FirstName">First Name</label>
-    <input asp-for="FirstName" class="form-control" placeholder="First Name" />
+    <label asp-for="FirstName">Fornavn</label>
+    <input asp-for="FirstName" class="form-control" placeholder="" />
     <br />
 
-    <label asp-for="LastName">Last Name</label>
-    <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+    <label asp-for="LastName">Etternavn</label>
+    <input asp-for="LastName" class="form-control" placeholder="" />
     <br />
 
-    <label asp-for="PhoneNumber">Phone Number</label>
-    <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" />
+    <label asp-for="PhoneNumber">Telefonnummer</label>
+    <input asp-for="PhoneNumber" class="form-control" placeholder="" />
     <br />
 
     <label asp-for="Email">Email</label>
-    <input asp-for="Email" class="form-control" placeholder="Email" />
+    <input asp-for="Email" class="form-control" placeholder="" />
     <br />
 
-    <label asp-for="ProductName">Product Name</label>
-    <input asp-for="ProductName" class="form-control" placeholder="Product Name" />
+    <label asp-for="Address">Adresse</label>
+    <input asp-for="Address" class="form-control" placeholder="" />
     <br />
 
-    <label asp-for="ProductType">Product Type</label>
-    <input asp-for="ProductType" class="form-control" placeholder="Product Type" />
+    <label asp-for="ProductName">Produkt navn</label>
+    <input asp-for="ProductName" class="form-control" placeholder="" />
     <br />
 
-    <label asp-for="PreferredTimePeriod">Preferred Time Period</label>
-    <input asp-for="PreferredTimePeriod" class="form-control" placeholder="Preferred Time Period" />
+    <label asp-for="ProductType">Produkt type</label>
+    <input asp-for="ProductType" class="form-control" placeholder="" />
     <br />
 
-    <label asp-for="Comment">Comment</label>
-    <input asp-for="Comment" class="form-control" placeholder="Comment" />
+    <label asp-for="SerialNumber">Serienummer</label>
+    <input asp-for="SerialNumber" class="form-control" placeholder="" />
     <br />
 
-    <button type="submit" class="btn btn-primary">Create</button>
+    <label asp-for="ModellYear">Årsmodell</label>
+    <input asp-for="ModellYear" class="form-control" placeholder="" />
+    <br />
+
+    <label asp-for="RecivedOrder">Hendvendelse motatt</label>
+    <input asp-for="RecivedOrder" type="date" class="form-control"/>
+    <br />
+
+    <label asp-for="RecivedProduct">Produkt motatt</label>
+    <input asp-for="RecivedProduct" type="date" class="form-control"/>
+    <br />
+
+    <label asp-for="ReperationDescription">Reperasjonsbeskrivelse</label>
+    <input asp-for="ReperationDescription" class="form-control" placeholder="" />
+    <br />
+
+    <label asp-for="Comment">Kommentar</label>
+    <input asp-for="Comment" class="form-control" placeholder="" />
+    <br />
+
+    <label asp-for="AgreedServiceFinished">Avtalt ferdigstilt service</label>
+    <input asp-for="AgreedServiceFinished" type="date" class="form-control"/>
+    <br />
+
+    <label asp-for="AgreedDelivery">Avtalt levering</label>
+    <input asp-for="AgreedDelivery" type="date" class="form-control"/>
+    <br />
+
+    <label asp-for="DeliveryWay">Forsendelsesmåte</label>
+    <input asp-for="DeliveryWay" class="form-control" placeholder="" />
+    <br />
+
+    <label asp-for="ServiceGaranti">Service garanti?</label>
+    <select asp-for="ServiceGaranti" class="form-control" required>
+        <option value="" selected disabled style="display: none;"></option>
+        <option value="true">Ja</option>
+        <option value="false">Nei</option>
+    </select>
+    <br />
+
+    <label asp-for="ServiceDone">Service ferdig</label>
+    <input asp-for="ServiceDone" type="date" class="form-control"/>
+    <br />
+
+    <label asp-for="UsedParts">Medgåtte deler</label>
+    <input asp-for="UsedParts" class="form-control" placeholder="" />
+    <br />
+
+    <label asp-for="ReturnedRemovedParts">Utskiftede deler returnert?</label>
+    <select asp-for="ReturnedRemovedParts" class="form-control" required>
+        <option value="" selected disabled style="display: none;"></option>
+        <option value="true">Ja</option>
+        <option value="false">Nei</option>
+    </select>
+    <br />
+
+
+    <label asp-for="HoursUsed">Antall timer brukt</label>
+    <input asp-for="HoursUsed" class="form-control" placeholder="" />
+    <br />
+
+    <label asp-for="CaseDone">Case ferdig?</label>
+    <select asp-for="CaseDone" class="form-control" required>
+        <option value="" selected disabled style="display: none;"></option>
+        <option value="true">Ja</option>
+        <option value="false">Nei</option>
+    </select>
+    <br />
+
+
+    <label asp-for="SignatureCustomer">Signatur kunde</label>
+    <input asp-for="SignatureCustomer" class="form-control" placeholder="" />
+    <br />
+
+    <label asp-for="SignatureMechanic">Signatur Reperatør</label>
+    <input asp-for="SignatureMechanic" class="form-control" placeholder="" />
+    <br />
+
+    <button type="submit" class="btn btn-primary">Lag serviceordre</button>
 </form>
