@@ -1,32 +1,33 @@
 ﻿@model bacit_dotnet.MVC.Models.ServiceOrdre.ServiceOrderViewModel
 <h1>Oversikt</h1>
+<hr />
 
 <p>
-    <a asp-controller="ServiceOrder" asp-action="Create">Create new Serviceform</a>
+    <a asp-controller="ServiceOrder" asp-action="Create">Lag en ny serviceordre</a>
 </p>
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.OrderId)
+                Ordre ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                Navn
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                Telefonnummer
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProductName)
+                Produkttype
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Comment)
+                Reperasjonsbeskrivelse
             </th>
             <th></th>
         </tr>
     </thead>
-
+    
     <tbody>
               <tr>
                 <td>
@@ -36,18 +37,18 @@
                 @Html.DisplayFor(model => model.FirstName)
             </td>
                 <td>
-                    @Html.DisplayFor(model => model.Email)
+                    @Html.DisplayFor(model => model.PhoneNumber)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.ProductName)
+                    @Html.DisplayFor(model => model.ProductType)
                 </td>
             <td>
-                @Html.DisplayFor(model => model.Comment)
+                @Html.DisplayFor(model => model.ReperationDescription)
             </td>
                 <td>
-                    <a asp-action="Edit" asp-route-itemid="@Model.OrderId">Edit</a> |
-                    <a asp-action="Details" asp-route-itemid="@Model.OrderId">Details</a> |
-                    <a asp-action="Delete" asp-route-itemid="@Model.OrderId">Delete</a>
+                    <a asp-action="Edit" asp-route-itemid="@Model.OrderId">Rediger</a> |
+                    <a asp-action="Details" asp-route-itemid="@Model.OrderId">Detaljer</a> |
+                    <a asp-action="Delete" asp-route-itemid="@Model.OrderId">Slett</a>
                 </td>   
             </tr>  
     </tbody>
