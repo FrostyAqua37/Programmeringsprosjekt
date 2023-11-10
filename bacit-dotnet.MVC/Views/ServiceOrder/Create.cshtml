@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create Serviceform";
 }
 
-<h1>Lag en serviceordre</h1>
+<h1>Serviceordre</h1>
 <hr />
 
 @Html.AntiForgeryToken()
@@ -118,9 +118,9 @@
     <input asp-for="SignatureCustomer" class="form-control" placeholder="" />
     <br />
 
-    <label asp-for="SignatureMechanic">Signatur Reperatør</label>
+    <label asp-for="SignatureMechanic">Signatur reperatør</label>
     <input asp-for="SignatureMechanic" class="form-control" placeholder="" />
     <br />
 
-    <button type="submit" class="btn btn-primary">Lag serviceordre</button>
+    <button type="submit" class="btn btn-primary">Ferdig</button>
 </form>

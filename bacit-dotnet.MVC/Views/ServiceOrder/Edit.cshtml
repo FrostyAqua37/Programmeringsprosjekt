@@ -6,8 +6,6 @@
 
 <h1>Rediger serviceordre</h1>
 <hr />
-<div class="row">
-    <div class="col-md-4">
 
         <label asp-for="FirstName">Fornavn</label>
         <input asp-for="FirstName" class="form-control" placeholder="" />
@@ -115,14 +113,11 @@
         <input asp-for="SignatureCustomer" class="form-control" placeholder="" />
         <br />
 
-        <label asp-for="SignatureMechanic">Signatur Reperatør</label>
+        <label asp-for="SignatureMechanic">Signatur reperatør</label>
         <input asp-for="SignatureMechanic" class="form-control" placeholder="" />
         <br />
-
-        </div>
-        </div>
 <div>
-    <a asp-action="Index">Oppdater</a>
+    <a asp-action="Index" class="btn btn-primary">Oppdater</a>
 </div>
 
 @section Scripts {

@@ -8,62 +8,110 @@
 
 <div>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.OrderId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.OrderId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductType)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ProductType)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PreferredTimePeriod)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PreferredTimePeriod)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Comment)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Comment)
-        </dd>
-    </dl>
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Ordre ID</th>
+            <td>@Html.DisplayFor(model => model.OrderId)</td>
+        </tr>
+            <tr>
+                <th>Fornavn</th>
+                <td>@Html.DisplayFor(model => model.FirstName)</td>
+            </tr>
+            <tr>
+                <th>Etternavn</th>
+                <td>@Html.DisplayFor(model => model.LastName)</td>
+            </tr>
+            <tr>
+                <th>Telefonnummer</th>
+                <td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>@Html.DisplayFor(model => model.Address)</td>
+            </tr>
+            <tr>
+                <th>Produkt navn</th>
+                <td>@Html.DisplayFor(model => model.ProductName)</td>
+            </tr>
+            <tr>
+                <th>Produkt type</th>
+                <td>@Html.DisplayFor(model => model.ProductType)</td>
+            </tr>
+            <tr>
+                <th>Serienummer</th>
+                <td>@Html.DisplayFor(model => model.SerialNumber)</td>
+            </tr>
+            <tr>
+                <th>Årsmodell</th>
+                <td>@Html.DisplayFor(model => model.ModellYear)</td>
+            </tr>
+            <tr>
+                <th>Hendvendselse motatt</th>
+                <td>@Html.DisplayFor(model => model.RecivedOrder)</td>
+            </tr>
+            <tr>
+                <th>Produkt motatt</th>
+                <td>@Html.DisplayFor(model => model.RecivedProduct)</td>
+            </tr>
+            <tr>
+                <th>Reprasjonsbeskrivelse</th>
+                <td>@Html.DisplayFor(model => model.ReperationDescription)</td>
+            </tr>
+            <tr>
+                <th>Kommentar</th>
+                <td>@Html.DisplayFor(model => model.Comment)</td>
+            </tr>
+            <tr>
+                <th>Avtalt ferdigstilt service</th>
+                <td>@Html.DisplayFor(model => model.AgreedServiceFinished)</td>
+            </tr>
+            <tr>
+                <th>Avtalt levering</th>
+                <td>@Html.DisplayFor(model => model.AgreedDelivery)</td>
+            </tr>
+            <tr>
+                <th>Forsendelsesmåte</th>
+                <td>@Html.DisplayFor(model => model.DeliveryWay)</td>
+            </tr>
+            <tr>
+                <th>Service garanti?</th>
+                <td>@Html.DisplayFor(model => model.ServiceGaranti)</td>
+            </tr>
+            <tr>
+                <th>Service ferdig</th>
+                <td>@Html.DisplayFor(model => model.ServiceDone)</td>
+            </tr>
+            <tr>
+                <th>Medgåtte deler</th>
+                <td>@Html.DisplayFor(model => model.UsedParts)</td>
+            </tr>
+            <tr>
+                <th>Utskiftede deler returnert?</th>
+                <td>@Html.DisplayFor(model => model.ReturnedRemovedParts)</td>
+            </tr>
+            <tr>
+                <th>Antall timer brukt</th>
+                <td>@Html.DisplayFor(model => model.HoursUsed)</td>
+            </tr>
+            <tr>
+                <th>Case ferdig</th>
+                <td>@Html.DisplayFor(model => model.CaseDone)</td>
+            </tr>
+            <tr>
+                <th>Signatur kunde</th>
+                <td>@Html.DisplayFor(model => model.SignatureCustomer)</td>
+            </tr>
+            <tr>
+                <th>Signatur reperatør</th>
+                <td>@Html.DisplayFor(model => model.SignatureMechanic)</td>
+            </tr>
+        </tbody>
+        </table>
 </div>
 <div>
     <a asp-action="Index">Tilbake til oversikt</a>
