@@ -21,22 +21,20 @@
         </tr>
     </thead>
 
-
     @if (Model != null)
     {
         foreach (var item in Model.serviceform)
         {
-
             <tbody>
                 <tr>
                     <td>
-                      @item.OrderId
+                        @item.OrderId
                     </td>
                     <td>
-                     @item.Email
+                        @item.Email
                     </td>
                     <td>
-                     @item.ProductName
+                        @item.ProductName
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-itemid="@item.OrderId">Edit</a> |
@@ -45,7 +43,72 @@
                     </td>
                 </tr>
             </tbody>
-            }
         }
-        </table>
+    }
+</table>
+
+@if (Model != null)
+{
+    foreach (var item in Model.serviceform)
+    {
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.OrderId)
+            </dt>
+            <dd class="col-sm-10">
+                @item.OrderId
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+            <dd class="col-sm-10">
+                @item.FirstName
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+            <dd class="col-sm-10">
+                @item.LastName
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+            <dd class="col-sm-10">
+                @item.PhoneNumber
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @item.Email
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ProductName)
+            </dt>
+            <dd class="col-sm-10">
+                @item.ProductName
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ProductType)
+            </dt>
+            <dd class="col-sm-10">
+                @item.ProductType
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PreferredTimePeriod)
+            </dt>
+            <dd class="col-sm-10">
+                @item.PreferredTimePeriod
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Comment)
+            </dt>
+            <dd class="col-sm-10">
+                @item.Comment
+            </dd>
+        </dl>
+
+    }
+}
 
