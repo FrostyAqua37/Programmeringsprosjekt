@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using bacit_dotnet.MVC.Models.ServiceOrdre;
 
 namespace bacit_dotnet.MVC.DataAccess
 {
@@ -21,5 +22,7 @@ namespace bacit_dotnet.MVC.DataAccess
         }
 
         public DbSet<UserEntity> Users { get; set; }
+
+        public DbSet<ServiceOrder> ServiceOrders { get; set; }
     }
 }

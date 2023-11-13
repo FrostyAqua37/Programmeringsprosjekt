@@ -1,5 +1,7 @@
-﻿using bacit_dotnet.MVC.Models.ServiceOrdre;
+﻿using bacit_dotnet.MVC.DataAccess;
+using bacit_dotnet.MVC.Models.ServiceOrdre;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Web;
 using System.Xml.Linq;
 
@@ -7,6 +9,14 @@ namespace bacit_dotnet.MVC.Controllers
 {
     public class ServiceOrderController : Controller
     {
+
+        private readonly DataContext _context;
+
+        public ServiceOrderController(DataContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Create()
         {
             return View();
@@ -22,7 +32,13 @@ namespace bacit_dotnet.MVC.Controllers
             return View();
         }
 
-      
+        public IActionResult Success()
+        {
+            return View();
+        }
+
+
+
         public IActionResult WorkDocument()
         {
             return View();
@@ -45,24 +61,18 @@ namespace bacit_dotnet.MVC.Controllers
 
         [HttpPost]
         [HttpGet]
-       
-        public IActionResult Index(string FirstName, string LastName, string PhoneNumber, string Email, string ProductName, string ProductType, string PreferredTimePeriod, string Comment)
-        {
-            var model = new ServiceOrderViewModel
-            {
-                OrderId = 1,
-                FirstName = HttpUtility.HtmlEncode(FirstName),
-                LastName = HttpUtility.HtmlEncode(LastName),
-                PhoneNumber = HttpUtility.HtmlEncode(PhoneNumber),
-                Email = HttpUtility.HtmlEncode(Email),
-                ProductName = HttpUtility.HtmlEncode(ProductName),
-                PreferredTimePeriod = HttpUtility.HtmlEncode(PreferredTimePeriod),
-                Comment = HttpUtility.HtmlEncode(Comment)
 
+        public async Task<IActionResult> Index()
+        {
+            var serviceOrders = await _context.ServiceOrders.ToListAsync();
+            var viewModel = new ServiceOrderViewModel
+            {
+                ServiceOrders = serviceOrders // Assuming Serviceform and ServiceOrder have the same properties
             };
 
-            return View(model);
+            return View(viewModel);
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -74,5 +84,25 @@ namespace bacit_dotnet.MVC.Controllers
             }
             return View("Index", model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateServiceOrder(ServiceOrder serviceOrder)
+        {
+            if (ModelState.IsValid)
+            {
+
+                _context.ServiceOrders.Add(serviceOrder);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Index"); // Redirect to a success page or another appropriate action
+            }
+
+            // If we got this far, something failed; redisplay the form
+            return View("Create", serviceOrder);
+        }
+
+ 
+
     }
 }
