@@ -9,38 +9,27 @@
     <link rel="stylesheet" href="~/bacit_dotnet.MVC.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">bacit_dotnet.MVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ServiceOrder" asp-action="Index">Serviceform</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ServiceOrder" asp-action="WorkDocument">WorkDocument</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ServiceOrder" asp-action="Checklist">Checklist</a>
-                        </li>
-                    </ul>
+        <form runat="server">
+            <div class="d-flex" id="wrapper">
+                <div class="bg-light border-light" id="sidebar-wrapper">
+                    <div class="sidebar-heading">Nøsted</div>
+                    <div class="list-group list-group-flush">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action bg-light">Index</a>
+                        <a asp-area="" asp-controller="ServiceOrder" asp-action="Index" class="list-group-item list-group-item-action bg-light">Serviceform</a>
+                        <a asp-area="" asp-controller="ServiceOrder" asp-action="WorkDocument" class="list-group-item list-group-item-action bg-light">Work Document</a>
+                        <a asp-area="" asp-controller="ServiceOrder" asp-action="Checklist" class="list-group-item list-group-item-action bg-light">Checklist</a>
+                    </div>
+                </div>
+                <div id="page-content-wrapper">
+                    <nav class="navbar navbar-expand-lg navbarS-light bg-light border-bottom">
+                        <h1>Nøsted</h1>
+                    </nav>
+                    <div class="container-fluid">
+                        @RenderBody()
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        </form>
 
     <footer class="border-top footer text-muted">
         <div class="container">

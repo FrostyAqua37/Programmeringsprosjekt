@@ -37,6 +37,7 @@ namespace bacit_dotnet.MVC.Models.ServiceOrdre
 
     public class ChecklistViewModel
     {
+        public List<ChecklistViewModel> checklist { get; set; } 
         //For mekaniske delen av sjekklisten
         public string? mekanisk1 { get; set; }
         public string? mekanisk2 { get; set; }

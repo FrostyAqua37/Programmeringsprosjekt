@@ -25,13 +25,6 @@
     text-align: center;
 }
 
-#button1 {
-}
-
-#button3 {
-    left: 51px;
-}
-
 #Mekanisk, #Hydraulikk, #Elektro, #Trykksettinger, #Funksjonstest {
     width: 20%;
     height: auto;
