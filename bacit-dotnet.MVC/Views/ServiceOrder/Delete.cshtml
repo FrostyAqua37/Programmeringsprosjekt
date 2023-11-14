@@ -52,8 +52,10 @@
 </table>
 
 <div>
-    <a asp-action="Index" class="btn btn-danger">Slett</a>
-
+    <form method="post" asp-action="Delete" asp-route-id="@Model.OrderId">
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-danger">Slett</button>
+    </form>
 </div>
 
 @section Scripts {

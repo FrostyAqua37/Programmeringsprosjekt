@@ -95,63 +95,63 @@ namespace bacit_dotnet.MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, ServiceOrderViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(model);
-            }
-            { 
-                var serviceOrder = await _context.ServiceOrders.FindAsync(id);
-                if (serviceOrder == null)
                 {
-                    return NotFound();
-                }
-
-                serviceOrder.OrderId = model.OrderId;
-                serviceOrder.FirstName = model.FirstName;
-                serviceOrder.LastName = model.LastName;
-                serviceOrder.PhoneNumber = model.PhoneNumber;
-                serviceOrder.Email = model.Email;
-                serviceOrder.Address = model.Address;
-                serviceOrder.ProductName = model.ProductName;
-                serviceOrder.ProductType = model.ProductType;
-                serviceOrder.SerialNumber = model.SerialNumber;
-                serviceOrder.ModellYear = model.ModellYear;
-                serviceOrder.RecivedOrder = model.RecivedOrder;
-                serviceOrder.RecivedProduct = model.RecivedProduct;
-                serviceOrder.ReperationDescription = model.ReperationDescription;
-                serviceOrder.AgreedServiceFinished = model.AgreedServiceFinished;
-                serviceOrder.AgreedDelivery = model.AgreedDelivery;
-                serviceOrder.DeliveryWay = model.DeliveryWay;
-                serviceOrder.ServiceGaranti = model.ServiceGaranti;
-                serviceOrder.ServiceDone = model.ServiceDone;
-                serviceOrder.UsedParts = model.UsedParts;
-                serviceOrder.ReturnedRemovedParts = model.ReturnedRemovedParts;
-                serviceOrder.HoursUsed = model.HoursUsed;
-                serviceOrder.CaseDone = model.CaseDone;
-                serviceOrder.SignatureCustomer = model.SignatureCustomer;
-                serviceOrder.SignatureMechanic = model.SignatureMechanic;
-                serviceOrder.Comment = model.Comment;
-
-                try
-                {
-                    _context.Update(serviceOrder);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!await ServiceOrderExists(id))
+                    var serviceOrder = await _context.ServiceOrders.FindAsync(id);
+                    if (serviceOrder == null)
                     {
                         return NotFound();
                     }
-                    else
+
+                    serviceOrder.OrderId = model.OrderId;
+                    serviceOrder.FirstName = model.FirstName;
+                    serviceOrder.LastName = model.LastName;
+                    serviceOrder.PhoneNumber = model.PhoneNumber;
+                    serviceOrder.Email = model.Email;
+                    serviceOrder.Address = model.Address;
+                    serviceOrder.ProductName = model.ProductName;
+                    serviceOrder.ProductType = model.ProductType;
+                    serviceOrder.SerialNumber = model.SerialNumber;
+                    serviceOrder.ModellYear = model.ModellYear;
+                    serviceOrder.RecivedOrder = model.RecivedOrder;
+                    serviceOrder.RecivedProduct = model.RecivedProduct;
+                    serviceOrder.ReperationDescription = model.ReperationDescription;
+                    serviceOrder.AgreedServiceFinished = model.AgreedServiceFinished;
+                    serviceOrder.AgreedDelivery = model.AgreedDelivery;
+                    serviceOrder.DeliveryWay = model.DeliveryWay;
+                    serviceOrder.ServiceGaranti = model.ServiceGaranti;
+                    serviceOrder.ServiceDone = model.ServiceDone;
+                    serviceOrder.UsedParts = model.UsedParts;
+                    serviceOrder.ReturnedRemovedParts = model.ReturnedRemovedParts;
+                    serviceOrder.HoursUsed = model.HoursUsed;
+                    serviceOrder.CaseDone = model.CaseDone;
+                    serviceOrder.SignatureCustomer = model.SignatureCustomer;
+                    serviceOrder.SignatureMechanic = model.SignatureMechanic;
+                    serviceOrder.Comment = model.Comment;
+
+                    try
                     {
-                        throw;
+                        _context.Update(serviceOrder);
+                        await _context.SaveChangesAsync();
                     }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!await ServiceOrderExists(id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+
+                    return RedirectToAction("Index");
                 }
 
-                return RedirectToAction(nameof(Index));
+                return View(model);
             }
-
             return View(model);
         }
 
@@ -204,11 +204,52 @@ namespace bacit_dotnet.MVC.Controllers
             return View(model);
         }
 
-
-        public IActionResult Delete()
+        public async Task<IActionResult> Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var serviceOrder = await _context.ServiceOrders
+                .FirstOrDefaultAsync(m => m.OrderId == id);
+            if (serviceOrder == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new ServiceOrderViewModel
+            {
+                OrderId = serviceOrder.OrderId,
+                FirstName = serviceOrder.FirstName, LastName = serviceOrder.LastName,
+                PhoneNumber = serviceOrder.PhoneNumber,
+                ProductType = serviceOrder.ProductType,
+                ReperationDescription = serviceOrder.ReperationDescription,
+
+            };
+
+            return View(viewModel);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+
+            var serviceOrder = await _context.ServiceOrders.FindAsync(id);
+            if (serviceOrder == null)
+
+            {
+                return NotFound();
+            }
+
+            _context.ServiceOrders.Remove(serviceOrder);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index"); 
+        }
+
+
 
         [HttpPost]
         [HttpGet]
@@ -218,7 +259,7 @@ namespace bacit_dotnet.MVC.Controllers
             var serviceOrders = await _context.ServiceOrders.ToListAsync();
             var viewModel = new ServiceOrderViewModel
             {
-                ServiceOrders = serviceOrders // Assuming Serviceform and ServiceOrder have the same properties
+                ServiceOrders = serviceOrders
             };
 
             return View(viewModel);
@@ -246,10 +287,9 @@ namespace bacit_dotnet.MVC.Controllers
                 _context.ServiceOrders.Add(serviceOrder);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Index"); // Redirect to a success page or another appropriate action
+                return RedirectToAction("Index"); 
             }
 
-            // If we got this far, something failed; redisplay the form
             return View("Create", serviceOrder);
         }
 

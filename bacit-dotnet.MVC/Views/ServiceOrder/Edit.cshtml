@@ -121,6 +121,7 @@
         <input asp-for="SignatureMechanic" class="form-control" placeholder="" />
         <br />
 
+    @Html.AntiForgeryToken()
 <button type="submit" class="btn btn-primary">Oppdater</button>
 
 </form>
