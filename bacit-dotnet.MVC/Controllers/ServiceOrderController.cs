@@ -8,10 +8,7 @@ namespace bacit_dotnet.MVC.Controllers
     [AutoValidateAntiforgeryToken]
     public class ServiceOrderController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+
         public IActionResult Create()
         {
             return View();
@@ -36,11 +33,6 @@ namespace bacit_dotnet.MVC.Controllers
         {
             return View();
         }
-      
-        public IActionResult Details()
-        {
-            return View();
-        }
 
         public IActionResult Delete()
         {
@@ -57,18 +49,18 @@ namespace bacit_dotnet.MVC.Controllers
         {
             var model = new Serviceform
             {
-                serviceform = new List<Serviceform>
+                serviceform = new List<Serviceform> 
                 {
                     new Serviceform
                     {
-                        FirstName = "Eivind",
-                        LastName = "Chen",
-                        PhoneNumber = "123456789",
-                        Email = "Email",
-                        ProductName = "Vinsj",
-                        ProductType = "nyeste",
-                        PreferredTimePeriod = "Uke 46",
-                        Comment = "Dette er en kommentar"
+                        FirstName = FirstName,
+                        LastName = LastName,
+                        PhoneNumber = PhoneNumber,
+                        Email = Email,
+                        ProductName = ProductName,
+                        ProductType = ProductType,
+                        PreferredTimePeriod = PreferredTimePeriod,
+                        Comment = Comment
                        
                     }
                 }
@@ -77,6 +69,29 @@ namespace bacit_dotnet.MVC.Controllers
         }
 
         [HttpPost]
+        [HttpGet]
+        public IActionResult Details(string FirstName, string LastName, string PhoneNumber, string Email, string ProductName, string ProductType, string PreferredTimePeriod, string Comment)
+        {
+            var model = List<Serviceform>
+            {
+                serviceform = new List<Serviceform>
+                {
+                    new Serviceform
+                    {
+                        FirstName = FirstName,
+                        LastName = LastName,
+                        PhoneNumber = PhoneNumber,
+                        Email = Email,
+                        ProductName = ProductName,
+                        ProductType = ProductType,
+                        PreferredTimePeriod = PreferredTimePeriod,
+                        Comment = Comment
+                    }
+                }
+            };
+            return View(model);
+        }
+
         [HttpGet]
         public IActionResult WorkDocument(string Week, string Order, string Inquiry, bool CaseCompleted, string CustomerInfo, DateTime? PlannedDelivery, DateTime? ProductReceivedDate, DateTime? AgreedCompletionDate, DateTime? ServiceCompletedDate, string ServiceHours, bool HasOrderNumber, bool HasServiceForm)
         {
