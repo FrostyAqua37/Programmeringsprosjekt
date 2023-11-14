@@ -7,6 +7,10 @@
 <h1>Rediger serviceordre</h1>
 <hr />
 
+<form asp-controller="ServiceOrder" asp-action="Edit" asp-route-id="@Model.OrderId" method="post">
+
+        <input type="hidden" asp-for="OrderId" />
+
         <label asp-for="FirstName">Fornavn</label>
         <input asp-for="FirstName" class="form-control" placeholder="" />
         <br />
@@ -116,9 +120,10 @@
         <label asp-for="SignatureMechanic">Signatur reperatør</label>
         <input asp-for="SignatureMechanic" class="form-control" placeholder="" />
         <br />
-<div>
-    <a asp-action="Index" class="btn btn-primary">Oppdater</a>
-</div>
+
+<button type="submit" class="btn btn-primary">Oppdater</button>
+
+</form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

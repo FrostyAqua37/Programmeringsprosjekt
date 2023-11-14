@@ -10,7 +10,6 @@ namespace bacit_dotnet.MVC.Models.ServiceOrdre
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
-
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
@@ -34,7 +33,6 @@ namespace bacit_dotnet.MVC.Models.ServiceOrdre
         public string SignatureCustomer { get; set; }
         public string SignatureMechanic { get; set; }
         public string SerialNumber { get; set; }
-
         public string Comment { get; set; }
     }
 }
