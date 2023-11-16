@@ -4,7 +4,7 @@ namespace bacit_dotnet.MVC.Models.ServiceOrdre
 {
     public class ServiceOrderViewModel
     {
-        public List<ServiceOrder> ServiceOrders { get; set; }
+        public List<ServiceOrder>? ServiceOrders { get; set; }
         public int OrderId { get; set; }
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
