@@ -72,7 +72,7 @@ namespace bacit_dotnet.MVC.Controllers
         [HttpGet]
         public IActionResult Details(string FirstName, string LastName, string PhoneNumber, string Email, string ProductName, string ProductType, string PreferredTimePeriod, string Comment)
         {
-            var model = List<Serviceform>
+            var model = new Serviceform
             {
                 serviceform = new List<Serviceform>
                 {

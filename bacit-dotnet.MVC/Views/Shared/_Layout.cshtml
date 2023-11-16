@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="~/bacit_dotnet.MVC.styles.css" asp-append-version="true" />
 </head>
 <body>
-<<<<<<< HEAD
         <form runat="server">
             <div class="d-flex" id="wrapper">
                 <div class="bg-light border-light" id="sidebar-wrapper">
@@ -28,7 +27,8 @@
                     <div class="container-fluid">
                         @RenderBody()
                     </div>
-=======
+                </div>
+            </div>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -52,19 +52,11 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="ServiceOrder" asp-action="Checklist">Checklist</a>
                         </li>
                     </ul>
->>>>>>> 87056fac16ae6a98972b109b06b80ace4651c75c
                 </div>
             </div>
+            </nav>
+            </header>
         </form>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - bacit_dotnet.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
