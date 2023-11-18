@@ -1,6 +1,8 @@
 ﻿using bacit_dotnet.MVC.DataAccess;
+using bacit_dotnet.MVC.Models.Checklist;
 using bacit_dotnet.MVC.Models.ServiceOrdre;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Web;
 using System.Xml.Linq;
@@ -28,17 +30,24 @@ namespace bacit_dotnet.MVC.Controllers
             return View();
         }
 
-        public IActionResult Checklist()
-        {
-            return View();
-        }
+        
 
         public IActionResult Success()
         {
             return View();
         }
 
+        public async Task<IActionResult> Checklist()
+        {
+            var viewModel = new ChecklistViewModel
+            {
+                OrderIds = await _context.ServiceOrders
+                    .Select(o => new SelectListItem { Value = o.OrderId.ToString(), Text = o.OrderId.ToString() })
+                    .ToListAsync()
+            };
 
+            return View("Checklist", viewModel);
+        }
 
         public IActionResult WorkDocument()
         {

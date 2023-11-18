@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using bacit_dotnet.MVC.DataAccess;
 
@@ -10,9 +11,11 @@ using bacit_dotnet.MVC.DataAccess;
 namespace bacit_dotnet.MVC.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231117161716_AddChecklistItem")]
+    partial class AddChecklistItem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -229,34 +232,6 @@ namespace bacit_dotnet.MVC.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("bacit_dotnet.MVC.Models.ChecklistItem.ChecklistItem", b =>
-                {
-                    b.Property<int>("ChecklistItemId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Kategori")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Sjekkpunkt")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("ChecklistItemId");
-
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("CheckListItems");
-                });
-
             modelBuilder.Entity("bacit_dotnet.MVC.Models.ServiceOrdre.ServiceOrder", b =>
                 {
                     b.Property<int>("OrderId")
@@ -405,17 +380,6 @@ namespace bacit_dotnet.MVC.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("bacit_dotnet.MVC.Models.ChecklistItem.ChecklistItem", b =>
-                {
-                    b.HasOne("bacit_dotnet.MVC.Models.ServiceOrdre.ServiceOrder", "ServiceOrder")
-                        .WithMany()
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ServiceOrder");
                 });
 #pragma warning restore 612, 618
         }
