@@ -1,4 +1,4 @@
-﻿@model bacit_dotnet.MVC.Models.ServiceOrdre.ChecklistViewModel
+﻿@model bacit_dotnet.MVC.Models.ServiceOrdre.Checklist
 
 @{
     ViewData["Title"] = "Checklist";
@@ -174,9 +174,9 @@
     <tbody>
         <tr id="item">
             <td id="Trykksettinger">1</td>
-            <td id="OK"><input type="radio" value="OK" name="XXBar1" /></td>
-            <td id="BorSkiftes"><input type="radio" value="BørSkiftes" name="XXBar1" /></td>
-            <td id="Defekt"><input type="radio" value="Defekt" name="XXBar1" /></td>
+            <td id="OK"><input type="radio" value="OK" name="trykkSetting" /></td>
+            <td id="BorSkiftes"><input type="radio" value="BørSkiftes" name="trykkSetting" /></td>
+            <td id="Defekt"><input type="radio" value="Defekt" name="trykkSetting" /></td>
         </tr>
     </tbody>
 </table>
@@ -211,12 +211,9 @@
         </tr>
     </tbody>
 </table>
-
-<button type="submit" class="btn btn-primary" onclick="submitForms()">Submit</button>
-
 @if (Model != null)
 {
-    foreach (var item in Model.checklist)
+    foreach (var item in Model.mekanisk)
     {
         <hr />
         <dl class="row">
@@ -268,91 +265,10 @@
             <dd class="col-sm-10">
                 @item.mekanisk8
             </dd>
-            <dt class="col-sm-4">
-                1
-            </dt>
-            <dd class="col-sm-10">
-                @item.hydraulikk1
-            </dd>
-            <dt class="col-sm-4">
-                2
-            </dt>
-            <dd class="col-sm-10">
-                @item.hydraulikk2
-            </dd>
-            <dt class="col-sm-4">
-                3
-            </dt>
-            <dd class="col-sm-10">
-                @item.hydraulikk3
-            </dd>
-            <dt class="col-sm-4">
-                4
-            </dt>
-            <dd class="col-sm-10">
-                @item.hydraulikk4
-            </dd>
-            <dt class="col-sm-4">
-                5
-            </dt>
-            <dd class="col-sm-10">
-                @item.hydraulikk5
-            </dd>
-            <dt class="col-sm-4">
-                6
-            </dt>
-            <dd class="col-sm-10">
-                @item.hydraulikk6
-            </dd>
-            <dt class="col-sm-4">
-                7
-            </dt>
-            <dd class="col-sm-10">
-                @item.hydraulikk7
-            </dd>
-
-            <dt class="col-sm-4">
-                1
-            </dt>
-            <dd class="col-sm-10">
-                @item.elektro1
-            </dd>
-            <dt class="col-sm-4">
-                2
-            </dt>
-            <dd class="col-sm-10">
-                @item.elektro2
-            </dd>
-            <dt class="col-sm-4">
-                3
-            </dt>
-            <dd class="col-sm-10">
-                @item.elektro3
-            </dd>
-            <dt class="col-sm-4">
-                1
-            </dt>
-            <dd class="col-sm-10">
-                @item.XXBar1
-            </dd>
-            <dt class="col-sm-4">
-                1
-            </dt>
-            <dd class="col-sm-10">
-                @item.funksjonstest1
-            </dd>
-            <dt class="col-sm-4">
-                2
-            </dt>
-            <dd class="col-sm-10">
-                @item.funksjonstest2
-            </dd>
-            <dt class="col-sm-4">
-                3
-            </dt>
-            <dd class="col-sm-10">
-                @item.funksjonstest3
-            </dd>
         </dl>
+
     }
 }
+
+<button type="submit" class="btn btn-primary" onclick="submitForms()">Submit</button>
+

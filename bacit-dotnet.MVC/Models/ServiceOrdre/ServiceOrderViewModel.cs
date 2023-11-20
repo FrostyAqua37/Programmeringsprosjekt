@@ -4,7 +4,6 @@ namespace bacit_dotnet.MVC.Models.ServiceOrdre
 {
     public class Serviceform
     {
-      
         public List<Serviceform> workDocument { get; set; }
         public List<Serviceform> serviceform { get; set; }
         [Key]
@@ -35,25 +34,48 @@ namespace bacit_dotnet.MVC.Models.ServiceOrdre
         public bool HasServiceForm { get; set; }
     }
 
-    public class ChecklistViewModel
+    public class Checklist
     {
-        public List<ChecklistViewModel> checklist { get; set; } 
-        //For mekaniske delen av sjekklisten
-        public string? mekanisk1 { get; set; }
-        public string? mekanisk2 { get; set; }
-        public string? mekanisk3 { get; set; }
-        public string? mekanisk4 { get; set; }
-        public string? mekanisk5 { get; set; }
-        public string? mekanisk6 { get; set; }
-        public string? mekanisk7 { get; set; }
-        public string? mekanisk8 { get; set; }
+        public List<mekanisk> mekanisk { get; set; }
+        public List<elektro> elektro { get; set; }
+        public List<hydraulikk> hydraulikk { get; set; }
+        public List<trykkSettinger> trykkSettinger { get; set; }
+        public List<funksjonstest> funksjonstest { get; set; }
+    }
 
-        //For elektrodelen av sjekklisten
+    public class mekanisk
+    {
+        public string mekanisk1 { get; set; }
+        public string mekanisk2 { get; set; }
+        public string mekanisk3 { get; set; }
+        public string mekanisk4 { get; set; }
+        public string mekanisk5 { get; set; }
+        public string mekanisk6 { get; set; }
+        public string mekanisk7 { get; set; }
+        public string mekanisk8 { get; set; }
+    }
+
+    public class elektro
+    {
         public string? elektro1 { get; set; }
         public string? elektro2 { get; set; }
         public string? elektro3 { get; set; }
+    }
 
-        //For hydraulikkdelen av sjekklisten
+    public class trykkSettinger
+    {
+        public string? trykkSetting { get; set; }
+    }
+
+    public class funksjonstest
+    {
+        public string? funksjonstest1 { get; set; }
+        public string? funksjonstest2 { get; set; }
+        public string? funksjonstest3 { get; set; }
+    }
+
+    public class hydraulikk
+    {
         public string? hydraulikk1 { get; set; }
         public string? hydraulikk2 { get; set; }
         public string? hydraulikk3 { get; set; }
@@ -61,14 +83,5 @@ namespace bacit_dotnet.MVC.Models.ServiceOrdre
         public string? hydraulikk5 { get; set; }
         public string? hydraulikk6 { get; set; }
         public string? hydraulikk7 { get; set; }
-
-        //For Trykksettinger av sjekklisten
-        public string? XXBar1 { get; set; }
-
-        //For Funksjonstestdelen av sjekklisten
-        public string? funksjonstest1 { get; set; }
-        public string? funksjonstest2 { get; set; }
-        public string? funksjonstest3 { get; set; }
-
     }  
 }

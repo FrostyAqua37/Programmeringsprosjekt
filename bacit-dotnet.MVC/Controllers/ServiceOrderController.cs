@@ -1,5 +1,6 @@
 ﻿using bacit_dotnet.MVC.Models.ServiceOrdre;
 using Microsoft.AspNetCore.Mvc;
+using Org.BouncyCastle.Asn1.X509;
 using System.Web;
 using System.Xml.Linq;
 
@@ -92,6 +93,7 @@ namespace bacit_dotnet.MVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
         [HttpGet]
         public IActionResult WorkDocument(string Week, string Order, string Inquiry, bool CaseCompleted, string CustomerInfo, DateTime? PlannedDelivery, DateTime? ProductReceivedDate, DateTime? AgreedCompletionDate, DateTime? ServiceCompletedDate, string ServiceHours, bool HasOrderNumber, bool HasServiceForm)
         {
@@ -126,24 +128,26 @@ namespace bacit_dotnet.MVC.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Mekanisk(string? mekanisk1, string? mekanisk2, string? mekanisk3, string? mekanisk4, string? mekanisk5, string? mekanisk6, string? mekanisk7, string? mekanisk8)
         {
-            var model = new ChecklistViewModel
+            var model = new Checklist
             {
-                mekanisk1 = mekanisk1,
-                mekanisk2 = mekanisk2,
-                mekanisk3 = mekanisk3,
-                mekanisk4 = mekanisk4,
-                mekanisk5 = mekanisk5,
-                mekanisk6 = mekanisk6,
-                mekanisk7 = mekanisk7,
-                mekanisk8 = mekanisk8
+                mekanisk = new List<mekanisk>
+                {
+                    new mekanisk
+                    {
+                      mekanisk1 = mekanisk1,
+                      mekanisk2 = mekanisk2,
+                      mekanisk3 = mekanisk3,
+                      mekanisk4 = mekanisk4,
+                      mekanisk5 = mekanisk5,
+                    }
+                }
             };
-
             return View(model);
         }
 
         public IActionResult Elektro(string? elektro1, string? elektro2, string? elektro3)
         {
-            var model = new ChecklistViewModel
+            var model = new elektro
             {
                 elektro1 = elektro1,
                 elektro2 = elektro2,
@@ -154,7 +158,7 @@ namespace bacit_dotnet.MVC.Controllers
 
         public IActionResult Hydraulikk(string? hydraulikk1, string? hydraulikk2, string? hydraulikk3, string? hydraulikk4, string? hydraulikk5, string? hydraulikk6, string? hydraulikk7)
         {
-            var model = new ChecklistViewModel
+            var model = new hydraulikk
             {
                 hydraulikk1 = hydraulikk1,
                 hydraulikk2 = hydraulikk2,
@@ -169,16 +173,16 @@ namespace bacit_dotnet.MVC.Controllers
 
         public IActionResult Trykksettinger(string? XXBar1)
         {
-            var model = new ChecklistViewModel
+            var model = new trykkSettinger
             {
-                XXBar1 = XXBar1
+                trykkSetting = XXBar1
             };
             return View("Index");
         }
 
         public IActionResult Funksjonstest(string? funksjonstest1, string? funksjonstest2, string? funksjonstest3)
         {
-            var model = new ChecklistViewModel
+            var model = new funksjonstest
             {
                 funksjonstest1 = funksjonstest1,
                 funksjonstest2 = funksjonstest2,
