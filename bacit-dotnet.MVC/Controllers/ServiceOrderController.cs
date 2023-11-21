@@ -1,6 +1,7 @@
 ﻿using bacit_dotnet.MVC.DataAccess;
 using bacit_dotnet.MVC.Models.Checklist;
 using bacit_dotnet.MVC.Models.ServiceOrdre;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,7 @@ namespace bacit_dotnet.MVC.Controllers
             _context = context;
         }
 
+        [Authorize(Roles = "Admin,Super")]
         public IActionResult Create()
         {
             return View();
@@ -37,6 +39,7 @@ namespace bacit_dotnet.MVC.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Mekaniker,Super")]
         public async Task<IActionResult> Checklist()
         {
             var viewModel = new ChecklistViewModel

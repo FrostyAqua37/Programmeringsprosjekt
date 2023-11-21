@@ -45,7 +45,11 @@ namespace bacit_dotnet.MVC.Controllers
             };
             var roles = new List<string>();
             if (model.IsAdmin)
-                roles.Add("Administrator");
+                roles.Add("Admin");
+            if (model.IsMekaniker)
+                roles.Add("Mekaniker");
+            if (model.IsSuper)
+                roles.Add("Super");
 
             if (userRepository.GetUsers().FirstOrDefault(x => x.Email.Equals(newUser.Email, StringComparison.InvariantCultureIgnoreCase)) != null)
                 userRepository.Update(newUser, roles);
