@@ -265,7 +265,7 @@ namespace bacit_dotnet.MVC.Controllers
 
         [HttpPost]
         [HttpGet]
-
+        [Authorize(Roles = "Admin,Mekaniker,Super")]
         public async Task<IActionResult> Index()
         {
             var serviceOrders = await _context.ServiceOrders.ToListAsync();
