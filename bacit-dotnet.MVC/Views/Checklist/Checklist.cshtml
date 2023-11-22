@@ -1,4 +1,4 @@
-@model bacit_dotnet.MVC.Models.Checklist.ChecklistViewModel
+﻿@model bacit_dotnet.MVC.Models.Checklist.ChecklistViewModel
 
 <h1>Sjekkliste</h1>
 <hr />
@@ -31,19 +31,19 @@
                 <td><input type="radio" name="Status[0]" value="Defekt" /></td>
             </tr>
             <tr>
-        <td>Mekanisk</td>
-        <td>Sjekk bremser. Bånd/Pal</td>
-        <td><input type="radio" name="Status[1]" value="OK" /></td>
-        <td><input type="radio" name="Status[1]" value="BørSkiftes" /></td>
-        <td><input type="radio" name="Status[1]" value="Defekt" /></td>
-        </tr>
-           <tr>
-        <td>Mekanisk</td>
+                <td>Mekanisk</td>
+                <td>Sjekk bremser. Bånd/Pal</td>
+                <td><input type="radio" name="Status[1]" value="OK" /></td>
+                <td><input type="radio" name="Status[1]" value="BørSkiftes" /></td>
+                <td><input type="radio" name="Status[1]" value="Defekt" /></td>
+            </tr>
+            <tr>
+                <td>Mekanisk</td>
                 <td>Sjekk lager for trommel</td>
-        <td><input type="radio" name="Status[2]" value="OK" /></td>
-        <td><input type="radio" name="Status[2]" value="BørSkiftes" /></td>
-        <td><input type="radio" name="Status[2]" value="Defekt" /></td>
-        </tr>
+                <td><input type="radio" name="Status[2]" value="OK" /></td>
+                <td><input type="radio" name="Status[2]" value="BørSkiftes" /></td>
+                <td><input type="radio" name="Status[2]" value="Defekt" /></td>
+            </tr>
             <tr>
                 <td>Mekanisk</td>
                 <td>Sjekk PTO og opplagring</td>
@@ -79,7 +79,7 @@
                 <td><input type="radio" name="Status[7]" value="BørSkiftes" /></td>
                 <td><input type="radio" name="Status[7]" value="Defekt" /></td>
             </tr>
-            
+
             <tr>
                 <td>Hydraulisk</td>
                 <td>Sjekk hydraulikk sylinder for lekkasje</td>
@@ -186,146 +186,3 @@
 
     <button type="submit" class="btn btn-primary">Lagre</button>
 </form>
-=======
-﻿@model List<bacit_dotnet.MVC.Models.ServiceOrdre.ChecklistViewModel>
-
-
-@{
-    ViewData["Title"] = "Checklist";
-}
-
-@{
-    //Mekanisk sjekkliste
-    var mekanisk = new string[] {
-        "Sjekk clutch lameller for slitasje",
-        "Sjekk bremser. Bånd/Pal",
-        "Sjekk lager for trommel",
-        "Sjekk PTO og opplagring",
-        "Sjekk kjedestrammer",
-        "Sjekk wire",
-        "Sjekk pinion lager",
-        "Sjekk kile på kjedehjul"
-    };
-
-    //Hydraulisk sjekkliste
-    var hydraulikk = new string[] {
-        "Sjekk hydraulikk sylinder for lekkasje",
-        "Sjekk slanger for skader og lekkasje",
-        "Test hydraulikkblokk i testbenk",
-        "Skift olje i tank",
-        "Skift olje på gir boks",
-        "Sjekk Ringsylinder åpne og skift tetninger",
-        "Sjekk bremse sylinder åpne og skift tetninger"
-    };
-
-    //Elektro sjekkliste
-    var elektro = new string[] {
-        "Sjekk ledningsnett på vinsj",
-        "Sjekk og test radio",
-        "Sjekk og test knappekasse"
-    };
-
-    //Trykk settinger sjekkliste
-    var trykkSettinger = new string[] {
-        "xx-Bar"
-    };
-
-    //Funksjonstest sjekkliste
-    var funksjonsTest = new string[] {
-        "Test vinsj og kjør alle funksjoner",
-        "Trekkraft KN",
-        "Bremse kraft KN"
-    };
-}
-
-<h1>Checklist</h1>
-
-<h2>Sjekkliste</h2>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                <label>Mekanisk</label>
-            </th>
-            <th>
-                <label>OK</label>
-            </th>
-            <th>
-                <label>Bør Skiftes</label>
-            </th>
-            <th>
-                <label>Defekt</label>
-            </th> 
-        </tr>
-    </thead>
- </table>
-
-<form asp-action="CreateChecklist" method="post">
-        <fieldset id="mekanisk1">
-            <label>Sjekk crutch lameller for slitasje</label>
-                <input type="radio" value="OK" name="mekanisk1">
-                <input type="radio" value="BørSkiftes" name="mekanisk1">
-                <input type="radio" value="Defekt" name="mekanisk1">
-        </fieldset>
-
-        <fieldset id="mekanisk2">
-            <label>Sjekk brenser. Bånd/Pal</label>
-                <input type="radio" value="OK" name="mekanisk2">
-                <input type="radio" value="BørSkiftes" name="mekanisk2">
-                <input type="radio" value="Defekt" name="mekanisk2">
-        </fieldset>
-
-        <fieldset id="mekanisk3">
-            <label>Sjekk lager for trommel</label>
-                <input type="radio" value="OK" name="mekanisk3">
-                <input type="radio" value="BørSkiftes" name="mekanisk3">
-                <input type="radio" value="Defekt" name="mekanisk3">
-        </fieldset>
-
-        <fieldset id="mekanisk4">
-            <label>Sjekk PTO og opplagring</label>
-                <input type="radio" value="OK" name="mekanisk4">
-                <input type="radio" value="BørSkiftes" name="mekanisk4">
-                <input type="radio" value="Defekt" name="mekanisk4">
-        </fieldset>
-
-        <fieldset id="mekanisk5">
-            <label>Sjekk kjedestrammer</label>
-                <input type="radio" value="OK" name="mekanisk5">
-                <input type="radio" value="BørSkiftes" name="mekanisk5">
-                <input type="radio" value="Defekt" name="mekanisk5">
-        </fieldset>
-
-        <fieldset id="mekanisk6">
-            <label>Sjekk wire</label>
-                <input type="radio" value="OK" name="mekanisk6">
-                <input type="radio" value="BørSkiftes" name="mekanisk6">
-                <input type="radio" value="Defekt" name="mekanisk6">
-        </fieldset>
-
-        <fieldset id="mekanisk7">
-            <label>Sjekk pinion lager</label>
-                <input type="radio" value="OK" name="mekanisk7">
-                <input type="radio" value="BørSkiftes" name="mekanisk7">
-                <input type="radio" value="Defekt" name="mekanisk7">
-        </fieldset>
-
-        <fieldset id="mekanisk8">
-            <label>Sjekk kile på kjedehjul</label>
-                <input type="radio" value="OK" name="mekanisk8">
-                <input type="radio" value="BørSkiftes" name="mekanisk8">
-                <input type="radio" value="Defekt" name="mekanisk8">
-        </fieldset>
-        <br />
-
-    <label>Elektro</label><br />
-
-    <label>Hydraulikk</label><br />
-    <label>Trykk Settinger</label><br />
-    <label>Funksjonstest</label><br />
-    <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-

@@ -75,6 +75,16 @@ namespace bacit_dotnet.MVC.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult AccessDenied(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            // You can add more logic here if needed
+            return View();
+        }
+
+
         //
         // GET: /Account/Register
         [HttpGet]
@@ -109,6 +119,19 @@ namespace bacit_dotnet.MVC.Controllers
                     //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
                     //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
                     //    "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
+                    if (model.Email.Equals("mekaniker@gmail.com", StringComparison.OrdinalIgnoreCase))
+                    {
+                        await _userManager.AddToRoleAsync(user, "Mekaniker");
+                    }
+                    else if (model.Email.Equals("admin@gmail.com", StringComparison.OrdinalIgnoreCase))
+                    {
+                        await _userManager.AddToRoleAsync(user, "Admin");
+                    }
+                    else if (model.Email.Equals("super@gmail.com", StringComparison.OrdinalIgnoreCase))
+                    {
+                        await _userManager.AddToRoleAsync(user, "Super");
+                    }
+
                     await _signInManager.SignInAsync(user, isPersistent: false);
 
                     
@@ -129,7 +152,7 @@ namespace bacit_dotnet.MVC.Controllers
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation(4, "User logged out.");
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+            return RedirectToAction("AccessDenied", "Account");
         }
 
         //

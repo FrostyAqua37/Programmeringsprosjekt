@@ -29,5 +29,16 @@ namespace bacit_dotnet.MVC.Controllers
             };
             return View("Index", model);
         }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Checklist()
+        {
+            return View();
+        }
+
     }
 }

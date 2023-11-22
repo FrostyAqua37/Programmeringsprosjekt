@@ -1,42 +1,45 @@
 ﻿@model bacit_dotnet.MVC.Models.ServiceOrdre.ServiceOrderViewModel
 <h1>Oversikt</h1>
-
-<p>
-    <a asp-controller="ServiceOrder" asp-action="Create">Create new Serviceform</a>
-</p>
+<hr />
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.OrderId)
+                Ordre ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                Navn
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProductName)
+                Telefonnummer
+            </th>
+            <th>
+                Produkttype
+            </th>
+            <th>
+                Reperasjonsbeskrivelse
             </th>
             <th></th>
         </tr>
     </thead>
-
+    
     <tbody>
+
+        @foreach (var order in Model.ServiceOrders)
+        {
               <tr>
+                <td>@order.OrderId</td>
+                <td>@order.FirstName @order.LastName</td>
+                <td>@order.PhoneNumber</td>
+                <td>@order.ProductType</td>
+                <td>@order.ReperationDescription</td>
                 <td>
-                    @Html.DisplayFor(model => model.OrderId)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.ProductName)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-itemid="@Model.OrderId">Edit</a> |
-                    <a asp-action="Details" asp-route-itemid="@Model.OrderId">Details</a> |
-                    <a asp-action="Delete" asp-route-itemid="@Model.OrderId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@order.OrderId">Rediger</a> 
+                    <a asp-action="Details" asp-route-id="@order.OrderId">Detaljer</a> 
+                    <a asp-action="Delete" asp-route-id="@order.OrderId">Slett</a>
                 </td>   
             </tr>  
+            }
     </tbody>
 </table>
