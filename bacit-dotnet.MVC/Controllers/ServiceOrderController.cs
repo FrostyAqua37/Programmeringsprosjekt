@@ -1,4 +1,4 @@
-﻿using bacit_dotnet.MVC.DataAccess;
+using bacit_dotnet.MVC.DataAccess;
 using bacit_dotnet.MVC.Models.Checklist;
 using bacit_dotnet.MVC.Models.ServiceOrdre;
 using Microsoft.AspNetCore.Authorization;
@@ -184,6 +184,14 @@ namespace bacit_dotnet.MVC.Controllers
                 return NotFound();
             }
 
+                FirstName = HttpUtility.HtmlEncode(FirstName),
+                LastName = HttpUtility.HtmlEncode(LastName),
+                PhoneNumber = HttpUtility.HtmlEncode(PhoneNumber),
+                Email = HttpUtility.HtmlEncode(Email),
+                ProductName = HttpUtility.HtmlEncode(ProductName),
+                PreferredTimePeriod = HttpUtility.HtmlEncode(PreferredTimePeriod),
+                Comment = HttpUtility.HtmlEncode(Comment)
+
             var model = new ServiceOrderViewModel
             {
                 OrderId = serviceOrder.OrderId,
@@ -275,6 +283,42 @@ namespace bacit_dotnet.MVC.Controllers
             };
 
             return View(viewModel);
+        }
+
+
+        [HttpPost]
+        [HttpGet]
+        public IActionResult CreateWorkDocument(string Order, string Week, string Inquiry, bool CaseCompleted, string CustomerInfo, DateTime? PlannedDelivery, DateTime? ProductReceivedDate, DateTime? AgreedCompletionDate, DateTime? ServiceCompletedDate, string ServiceHours, bool HasOrderNumber, bool HasServiceForm)
+        {
+            var model = new WorkDocumentViewModel
+            {
+                Order = HttpUtility.HtmlEncode(Order),
+                Week = HttpUtility.HtmlEncode(Week),
+                Inquiry = HttpUtility.HtmlEncode(Inquiry),
+                CaseCompleted = CaseCompleted,
+                CustomerInfo = HttpUtility.HtmlEncode(CustomerInfo),
+                PlannedDelivery = PlannedDelivery,
+                ProductReceivedDate = ProductReceivedDate,
+                AgreedCompletionDate = AgreedCompletionDate,
+                ServiceCompletedDate = ServiceCompletedDate,
+                ServiceHours = HttpUtility.HtmlEncode(ServiceHours),
+                HasOrderNumber = HasOrderNumber,
+                HasServiceForm = HasServiceForm
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        [HttpGet]
+        public IActionResult CreateChecklist(string? mekanisk1, string? mekanisk2, string? mekanisk3, string? mekanisk4, string? mekanisk5, string? mekanisk6, string? mekanisk7, string? mekanisk8)
+        {
+            var model = new ChecklistViewModel
+            {
+                mekanisk1 = mekanisk1,
+                mekanisk2 = mekanisk2,
+            };
+
+            return View();
         }
 
 
