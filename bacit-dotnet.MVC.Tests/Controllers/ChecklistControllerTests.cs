@@ -59,6 +59,32 @@ namespace bacit_dotnet.MVC.Tests.Controllers
             Assert.Equal("Index", redirectResult.ActionName);
             // Additional assertions as needed
         }
+
+        [Fact]
+        public void CreateChecklist_ReturnsView()
+        {
+            // Arrange
+            var options = new DbContextOptionsBuilder<DataContext>()
+                .UseInMemoryDatabase(databaseName: "TestDatabase")
+                .Options;
+
+            // Initialize TempData
+            var tempData = new TempDataDictionary(new DefaultHttpContext(), new SimpleTempDataProvider());
+
+            using var context = new DataContext(options);
+            var controller = new ChecklistController(context)
+            {
+                TempData = tempData
+            };
+
+            // Act
+            var result = controller.CreateChecklist();
+
+            // Assert
+            // Verify that the action returns a view result
+            var viewResult = Assert.IsType<ViewResult>(result);
+            Assert.Equal("Checklist", viewResult.ViewName); // Ensure it returns the "Checklist" view
+        }
     }
 }
 
