@@ -1,6 +1,6 @@
 Applikasjonen er satt opp i en MVC arkitektur. Dette står for model, view og controller.
 
-Applikasjonen kan kjøres både Docker og lokalt. Databasen er derimot koblet mot en lokal database. 
+Applikasjonen kan kjøres både Docker og lokalt. Den er derimot koblet mot en lokal database. 
 
 Modell representerer dataene, logikken og reglene i applikasjonen. I model er det fire mapper: Account, Checklist, ServiceOrdre og Users. 
 View er ansvarlig for visningen av dataene til brukeren. I view er det 6 mapper: Account, Checklist, Home, ServiceOrder, Shared og Users. 
