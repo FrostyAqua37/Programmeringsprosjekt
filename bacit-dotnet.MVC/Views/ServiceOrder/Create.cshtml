@@ -7,10 +7,9 @@
 <h1>Serviceordre</h1>
 <hr />
 
-@Html.AntiForgeryToken()
-@Html.ValidationSummary()
-
 <form asp-controller="ServiceOrder" asp-action="CreateServiceOrder" method="post">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
 
     <label asp-for="FirstName">Fornavn</label>
     <input asp-for="FirstName" class="form-control" placeholder="" />
