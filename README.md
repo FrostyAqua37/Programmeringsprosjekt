@@ -15,8 +15,8 @@ Account håndterer inn/ut logging. Checklist håndterer oppsett og funksjoner re
 ServiceOrder håndterer oppsettet og funksjoner relatert til serviceordre. Users håndterer de ulike rollene i systemet.
 
 Funksjonen legger til rette for håndtering av serviceordre for Nøsted. De ansatte, Mekanikerene og Administrative, har forskjellige roller, og
-har dermed tilgang til forskjellige funksjoner i systemet. Det eer mulighet å lage en serviceordre med all den nødvendige informasjonen. 
+har dermed tilgang til forskjellige funksjoner i systemet. Det har mulighet å lage en serviceordre med all den nødvendige informasjonen. 
 Denne serviceordren kan lagre, redigere og slette. Deretter kan man linke denne serviceorderen til en sjekkliste gjennom databasen. 
-Sjekklisten har oppsettet for å fylle ut sjekklisten Nøsted bruker idag. Man kan i tillegg logge ut og inn av systemet. 
+Sjekklisten har oppsettet Nøsted bruker idag for serviceordre angående vinsjer. Man kan i tillegg logge ut og inn av systemet. 
 
 Se Wiki for informasjon om testing og bruksanvisning.
