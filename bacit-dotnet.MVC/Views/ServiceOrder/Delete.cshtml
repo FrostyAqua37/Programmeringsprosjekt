@@ -52,10 +52,11 @@
 </table>
 
 <div>
-    <form method="post" asp-action="DeleteConfirmed" asp-route-id="@Model.OrderId">
+    @using (Html.BeginForm("DeleteConfirmed", "ServiceOrder", new { id = Model.OrderId }, FormMethod.Post))
+    {
         @Html.AntiForgeryToken()
         <button type="submit" class="btn btn-danger">Slett</button>
-    </form>
+    }
 </div>
 
 @section Scripts {
