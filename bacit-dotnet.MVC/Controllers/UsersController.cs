@@ -34,6 +34,7 @@ namespace bacit_dotnet.MVC.Controllers
             return View(model);
         }
 
+        //Definerte roller
         [HttpPost]
         public IActionResult Save(UserViewModel model)
         {

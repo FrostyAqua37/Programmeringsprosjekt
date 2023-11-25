@@ -50,11 +50,11 @@ namespace bacit_dotnet.MVC.Tests.Controllers
                 Comment = "Test Comment"
 
 
-                /*, Initialize other properties as needed */
+                /*, Initialiser andre verdier hvis det trengs */
             };
             var testModel = new ServiceOrderViewModel {
-                ServiceOrders = new List<ServiceOrder>(), // Assuming this is initialized as an empty list or relevant ServiceOrder objects
-                OrderId = testId, // Example ID, ensure it matches with the testServiceOrder's ID if needed
+                ServiceOrders = new List<ServiceOrder>(), 
+                OrderId = testId, 
                 FirstName = "TestFirstName",
                 LastName = "TestLastName",
                 PhoneNumber = "1234567890",
@@ -81,7 +81,7 @@ namespace bacit_dotnet.MVC.Tests.Controllers
                 SerialNumber = "SN123456"
             };
 
-            // Using actual DbContext with In-Memory Database
+            // Bruker DbContext med In-Memory Database
             using var context = new DataContext(options);
             context.ServiceOrders.Add(testServiceOrder);
             await context.SaveChangesAsync();
@@ -95,7 +95,6 @@ namespace bacit_dotnet.MVC.Tests.Controllers
             var redirectResult = Assert.IsType<RedirectToActionResult>(result);
             Assert.Equal("Index", redirectResult.ActionName);
 
-            // Optionally, verify that the service order was updated in the context
         }
     }
 

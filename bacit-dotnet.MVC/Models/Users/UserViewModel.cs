@@ -11,6 +11,7 @@ namespace bacit_dotnet.MVC.Models.Users
 
         public List<UserEntity> Users { get; set; }
         
+        //Roller
         public bool IsAdmin { get; set; }
 
         public bool IsMekaniker { get; set; }

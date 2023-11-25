@@ -22,7 +22,6 @@ namespace bacit_dotnet.MVC.Tests.Controllers
 
         public void SaveTempData(HttpContext context, IDictionary<string, object> values)
         {
-            // Method intentionally left empty.
         }
     }
 
@@ -47,17 +46,16 @@ namespace bacit_dotnet.MVC.Tests.Controllers
 
             var testViewModel = new ChecklistItemViewModel
             {
-                // Initialize properties as needed for the test
+                // Initialize
             };
 
             // Act
             var result = controller.SaveNewChecklist(testViewModel);
 
             // Assert
-            // Verify the expected behavior of the SaveNewChecklist method
+            // Verify forventet funksjon av SaveNewChecklist metoden
             var redirectResult = Assert.IsType<RedirectToActionResult>(result);
             Assert.Equal("Index", redirectResult.ActionName);
-            // Additional assertions as needed
         }
 
         [Fact]
@@ -81,9 +79,9 @@ namespace bacit_dotnet.MVC.Tests.Controllers
             var result = controller.CreateChecklist();
 
             // Assert
-            // Verify that the action returns a view result
+            // Verifiser at action returnerer et view resultat
             var viewResult = Assert.IsType<ViewResult>(result);
-            Assert.Equal("Checklist", viewResult.ViewName); // Ensure it returns the "Checklist" view
+            Assert.Equal("Checklist", viewResult.ViewName); // Forsikre om at det returnerer "Checklist" view
         }
     }
 }

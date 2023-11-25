@@ -33,7 +33,7 @@ namespace bacit_dotnet.MVC.Controllers
                         Kategori = ci.Kategori,
                         Sjekkpunkt = ci.Sjekkpunkt,
                         Status = ci.Status,
-                        SelectedOrderId = ci.OrderId // Assuming you want to include this
+                        SelectedOrderId = ci.OrderId 
                     })
                     .ToListAsync()
             };
@@ -46,11 +46,10 @@ namespace bacit_dotnet.MVC.Controllers
         {
             var viewModel = new ChecklistViewModel
             {
-                // Initialize your ViewModel here
-                // For example, load OrderIds or any other necessary data
+            
             };
 
-            return View("Checklist", viewModel); // Use the same view as the checklist
+            return View("Checklist", viewModel); 
         }
 
         
@@ -60,23 +59,22 @@ namespace bacit_dotnet.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Create a ChecklistItem and populate its properties
+                // Sjekkliste initialisert
                 var checklistItem = new ChecklistItem
                 {
                     OrderId = viewModel.SelectedOrderId,
                     Kategori = viewModel.Kategori,
                     Sjekkpunkt = viewModel.Sjekkpunkt,
                     Status = viewModel.Status
-                    // Additional properties
                 };
 
-                // Add the checklistItem to your database context and save changes
+                // Legger til sjekkliste til database og lagrer 
                 _context.ChecklistItems.Add(checklistItem);
                 _context.SaveChanges();
 
                 // Redirect or return a success message
                 TempData["SuccessMessage"] = "Checklist item created successfully.";
-                return RedirectToAction("Index"); // Replace "Index" with the action you want to redirect to.
+                return RedirectToAction("Index"); 
             }
 
             // If ModelState is not valid, return to the form with validation errors
@@ -88,17 +86,15 @@ namespace bacit_dotnet.MVC.Controllers
 
 
 
-        // Helper methods to get Kategori and Sjekkpunkt based on the index:
+        
         private string GetKategoriForIndex(int index)
         {
-            // This should match the order of the items in your view.
             var kategorier = new[] { "Mekanisk", "Hydraulisk", "Elektro", "Trykk settinger", "Funksjonstest",/* other categories */ };
             return kategorier[index];
         }
 
         private string GetSjekkpunktForIndex(int index)
         {
-            // This should match the order of the items in your view.
             var sjekkpunkter = new[] { 
              //Mekanisk
              "Sjekk clutch lameller for slitasje",

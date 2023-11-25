@@ -18,6 +18,7 @@ namespace bacit_dotnet.MVC.Controllers
         private readonly IUserRepository userRepository;
         private readonly ILogger _logger;
 
+        //Initialiserer tjenester
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IEmailSender emailSender, ILoggerFactory loggerFactory, IUserRepository userRepository)
         {
             _userManager = userManager;
@@ -27,7 +28,7 @@ namespace bacit_dotnet.MVC.Controllers
             _logger = loggerFactory.CreateLogger<AccountController>();
         }
 
-        // GET: /Account/Login
+        // GET metode for login side
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Login(string returnUrl = null)
@@ -37,18 +38,18 @@ namespace bacit_dotnet.MVC.Controllers
         }
 
         //
-        // POST: /Account/Login
+        // POST metode for å håndtere forespørsel om login
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
+            //Sjekker om login informasjonen er valid
             
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+                //Prøver å logge inn uten å lokke brukeren
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
@@ -71,10 +72,10 @@ namespace bacit_dotnet.MVC.Controllers
                 }
             }
 
-            // If we got this far, something failed, redisplay form
+            // Returer form hvis alt feilet
             return View(model);
         }
-
+        //GET metode for visning av access denied
         [HttpGet]
         [AllowAnonymous]
         public IActionResult AccessDenied(string returnUrl = null)
@@ -86,7 +87,7 @@ namespace bacit_dotnet.MVC.Controllers
 
 
         //
-        // GET: /Account/Register
+        // GET metode for registrerings side
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Register(string returnUrl = null)
@@ -96,7 +97,7 @@ namespace bacit_dotnet.MVC.Controllers
         }
 
         //
-        // POST: /Account/Register
+        // POST metode for å håndtere registererings forespørsler
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]

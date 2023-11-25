@@ -20,6 +20,7 @@ namespace bacit_dotnet.MVC.Controllers
             _context = context;
         }
 
+        //Tilgang til serviceordreskjema
         [Authorize(Roles = "Admin,Super")]
         public IActionResult Create()
         {
@@ -39,6 +40,7 @@ namespace bacit_dotnet.MVC.Controllers
             return View();
         }
 
+        //Tilgang til sjekkliste
         [Authorize(Roles = "Mekaniker,Super")]
         public async Task<IActionResult> Checklist()
         {
@@ -263,6 +265,7 @@ namespace bacit_dotnet.MVC.Controllers
 
 
 
+        //Tilgang til oversikt
         [HttpPost]
         [HttpGet]
         [Authorize(Roles = "Admin,Mekaniker,Super")]
