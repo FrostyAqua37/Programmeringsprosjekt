@@ -1,50 +1,22 @@
-# -bacit_dotnet
-Base project for IS202 in dotnet
-Text provided by Trym (https://github.com/Nosp1) - Modified slightly to fit this project. 
+IS202 - Nøsted Prosjekt
+***********************
 
-## Notice
-Please read and understand how the dockerfile works. 
-Understand that all scripts used (`build.*` & `startDb.*`) can be run in the terminal without the scripts.
-I recommend getting familiar with executing docker commands in the terminal before using the scripts.
+Applikasjonen er satt opp i en MVC rammeverk. Dette står for model, view og controller. Dette er et en struktur som decouple brukergrensesnitt,
+data og applikasjonslogikken. Det gjør slik at om det blir endringer i model, view eller i controller, vil de ikke påvirke hverandre. Dette gjør
+koden generelt bedre, da den er lettere å forstå og har bedre struktur.
 
-## How to use
-### Prerequisites:
-To make this work, you need to have [Docker](https://www.docker.com/) installed and running on your system.    
+Applikasjonen kan kjøres både Docker og lokalt. Den er derimot koblet mot en lokal database. 
 
-### Via commandline with docker (Recommended):
-> Note: On Unix and Unix-like systems (Mac and Linux) you might need to run the commands with `sudo` to make them work.
+Modell representerer dataene, logikken og reglene i applikasjonen. I model er det fire mapper: Account, Checklist, ServiceOrdre og Users. 
+View er ansvarlig for visningen av dataene til brukeren. I view er det 6 mapper: Account, Checklist, Home, ServiceOrder, Shared og Users. 
+Controller håndterer generelt behandlingen av data. I controllerern er det fem klasser: Account, Checklist, Home, ServiceOrder og Users. 
 
-##### 1. Build then start the docker container with the web application:    
-`docker image build -t webapp .`    
-`docker container run --rm -it -d --name webapp --publish 80:80 webapp`
+Account håndterer inn/ut logging. Checklist håndterer oppsett og funksjoner relatert til sjekklisten. Home håndterer oppsettet til hjemmesiden. 
+ServiceOrder håndterer oppsettet og funksjoner relatert til serviceordre. Users håndterer de ulike rollene i systemet.
 
-##### 2. Start a mariadb container using the localdirectory "database" to store the data:    
+Funksjonen legger til rette for håndtering av serviceordre for Nøsted. De ansatte, Mekanikerene og Administrative, har forskjellige roller, og
+har dermed tilgang til forskjellige funksjoner i systemet. Det har mulighet å lage en serviceordre med all den nødvendige informasjonen. 
+Denne serviceordren kan lagre, redigere og slette. Deretter kan man linke denne serviceorderen til en sjekkliste gjennom databasen. 
+Sjekklisten har oppsettet Nøsted bruker idag for serviceordre angående vinsjer. Man kan i tillegg logge ut og inn av systemet. 
 
-|Bash (Mac and Linux)|Powershell (Windows)|
-|--------------------|--------------------|
-|`docker run --rm --name mariadb -p 3308:3306/tcp -v "$(pwd)/database":/var/lib/mysql -e MYSQL_ROOT_PASSWORD=12345 -d mariadb:10.5.11`|`docker run --rm --name mariadb -p 3308:3306/tcp -v "%cd%\database":/var/lib/mysql -e MYSQL_ROOT_PASSWORD=12345 -d mariadb:10.5.11`|
-
-##### 3. Enter the database and create the database and table for this skeleton:    
-`docker exec -it mariadb mysql -p`    
-When prompted enter the password (`12345`), then type or copy in the SQL from [this file](CreateDb.sql) (line by line).
-
-##### 4. Test out the code at http://localhost:80/
-
-<br>
-
-### Via scripts:
-The following takes the above steps and deduce them into scripts. (all the above commands are present in the below scripts).
-The scripts allow us to build and deploy our application faster, which can be beneficial when the core concepts of using docker are understood.
-|Bash (Mac and Linux)|Powershell (Windows)|
-|--------------------|--------------------|
-|Run `build.sh` to compile source code and build tomcat docker image.|Run `build.cmd` to compile source code and build tomcat docker image.|
-|Run `startDb.sh` to start database|Run `startDb.cmd` to start database|
-
-> Note: On Unix and Unix-like systems (Mac and Linux) you might need to run the scripts with `sudo` to make them work.
-
-<br>
-
-#### PS
-Have fun and experiment :)
-
-Code can be copied freely
+Se Wiki for informasjon om testing og bruksanvisning.
