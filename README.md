@@ -1,7 +1,7 @@
 IS202 - Nøsted Prosjekt
 ***********************
 
-Applikasjonen er satt opp i en MVC arkitektur. Dette står for model, view og controller. Dette er et en struktur som decouple brukergrensesnitt,
+Applikasjonen er satt opp i en MVC rammeverk. Dette står for model, view og controller. Dette er et en struktur som decouple brukergrensesnitt,
 data og applikasjonslogikken. Det gjør slik at om det blir endringer i model, view eller i controller, vil de ikke påvirke hverandre. Dette gjør
 koden generelt bedre, da den er lettere å forstå og har bedre struktur.
 
